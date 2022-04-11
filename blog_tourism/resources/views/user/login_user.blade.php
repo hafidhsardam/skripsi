@@ -7,10 +7,19 @@
     }
 
     .form-signin {
-        width: 100%;
-        max-width: 330px;
-        padding: 15px;
-        margin: 0 auto;
+        position: absolute;
+        padding: 50px;
+        width: 575px;
+        height: 442px;
+        left: 500px;
+        top: 230px;
+
+        background: #FFFFFF;
+        /* 1 */
+
+        box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+        border-radius: 19.0044px;
+
     }
 
     .form-signin .checkbox {
