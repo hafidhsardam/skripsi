@@ -26,23 +26,11 @@
     <link href="{{ URL('css-js/css/carousel.css') }}" rel="stylesheet">
 </head>
 
-<style>
-    .card{
-        background-image:url("{{asset('assets/banner.jpg')}}");
-        text-align: center; 
-    }
-</style>
+
 
 <body>
 
 <div class="card text-dark bg-light mb-3" style="max-width: 100%;">
-            <div class="card-body">
-                <h1 class="card-title">Wonderful Journey</h1>
-                <p class="card-text">Blog of Indonesia Tourism</p>
-            </div>
-            <br>
-            <br>
-        </div>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Blog Tourism</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
