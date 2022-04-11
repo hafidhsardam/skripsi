@@ -29,7 +29,7 @@
 
 <body>
 
-<div class="card text-dark bg-light mb-3" style="max-width: 100%;">
+<div class="card text-dark bg-light mb-3">
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Blog Tourism</a>
