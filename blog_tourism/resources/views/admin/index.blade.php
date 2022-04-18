@@ -122,12 +122,14 @@ a.article, a.article:hover {
 
 .navbar-text{
     color: white;
+    background-color:black;
 }
 
 .abc123{
+    color: white;
     background-color: black;
-    
 }
+
 
 </style>
 
@@ -185,7 +187,7 @@ a.article, a.article:hover {
                         <a class="navbar-text" href="#">Purchase Order</a>
                     </li>
                     <li class="abc123">
-                        <a class="abc1" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Master Data</a>
+                        <a class="abc123" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Master Data</a>
                             <ul class="collapse list-unstyled" id="homeSubmenu">
                                 <li>
                                     <a class="navbar-text" href="#">Vendor</a>
