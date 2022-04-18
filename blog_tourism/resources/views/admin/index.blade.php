@@ -7,7 +7,7 @@
     left: -250px;
     height: 100vh;
     z-index: 999;
-    background: #7386D5;
+    background-color: black;
     color: #fff;
     transition: all 0.3s;
     overflow-y: scroll;
@@ -48,7 +48,7 @@
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: black;
 }
 
 #sidebar ul.components {
@@ -121,8 +121,13 @@ a.article, a.article:hover {
 }
 
 .navbar-text{
-    
+    color: white;
 }
+
+.abc123{
+    background-color: black;
+}
+
 </style>
 
 <!doctype html>
@@ -157,7 +162,7 @@ a.article, a.article:hover {
 
 <body>
 <div class="wrapper">
-            <!-- Sidebar Holder -->
+            
             <nav id="sidebar">
                 <div id="dismiss">
                     <i class="glyphicon glyphicon-arrow-left"></i>
@@ -169,26 +174,29 @@ a.article, a.article:hover {
 
                 <ul class="list-unstyled components">
                     
-                    <li class="navbar-text">
-                        <a href="#">Purchase Request</a>
+                    <li>
+                        <a class="navbar-text" href="#">Purchase Request</a>
                     </li>
-                    <li class="navbar-text">
-                        <a href="#">Request For Quotation</a>
+                    <li>
+                        <a class="navbar-text" href="#">Request For Quotation</a>
                     </li>
-                    <li class="navbar-text">
-                        <a href="#">Purchase Order</a>
+                    <li>
+                        <a class="navbar-text" href="#">Purchase Order</a>
                     </li>
-                    <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Master Data</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#">Vendor</a>
-                        </li>
-                        <li>
-                            <a href="#">User</a>
-                        </li>
-                        
-                    </ul>
+                    <li class="active abc123">
+                        <a class="abc1" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Master Data</a>
+                            <ul class="collapse list-unstyled" id="homeSubmenu">
+                                <li>
+                                    <a class="navbar-text" href="#">Vendor</a>
+                                </li>
+                                <li>
+                                    <a class="navbar-text" href="#">Product</a>
+                                </li>
+                                <li>
+                                    <a class="navbar-text" href="#">User</a>
+                                </li>
+                                
+                            </ul>
                 </li>
                 </ul>
                 <ul class="list-unstyled CTAs">
