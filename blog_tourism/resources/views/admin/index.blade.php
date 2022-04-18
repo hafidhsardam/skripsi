@@ -126,6 +126,7 @@ a.article, a.article:hover {
 
 .abc123{
     background-color: black;
+    
 }
 
 </style>
@@ -183,7 +184,7 @@ a.article, a.article:hover {
                     <li>
                         <a class="navbar-text" href="#">Purchase Order</a>
                     </li>
-                    <li class="active abc123">
+                    <li class="abc123">
                         <a class="abc1" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Master Data</a>
                             <ul class="collapse list-unstyled" id="homeSubmenu">
                                 <li>
