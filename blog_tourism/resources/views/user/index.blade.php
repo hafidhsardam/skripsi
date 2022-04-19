@@ -194,9 +194,7 @@ a.article, a.article:hover {
                                     <li>
                                         <a class="navbar-text" href="#">Product</a>
                                     </li>
-                                    <li>
-                                        <a class="navbar-text" href="#">User</a>
-                                    </li>
+                                    
                                     
                                 </ul>
                     </li>
