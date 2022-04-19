@@ -1,3 +1,137 @@
+<style>
+    @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+    #sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100vh;
+    z-index: 999;
+    background-color: black;
+    color: #fff;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+#dismiss {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: #7386D5;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+#dismiss:hover {
+    background: #fff;
+    color: #7386D5;
+}
+
+.overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    display: none;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: black;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #6d7fcc;
+}
+
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+    content: '\e259';
+    display: block;
+    position: absolute;
+    right: 20px;
+    font-family: 'Glyphicons Halflings';
+    font-size: 0.6em;
+}
+a[aria-expanded="true"]::before {
+    content: '\e260';
+}
+
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+a.article, a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+.navbar-text{
+    color: white;
+    background-color:black;
+}
+
+.abc123{
+    color: white;
+    background-color: black;
+}
+</style>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -24,14 +158,65 @@
     <link href="{{ URL('css-js/css/pricing.css') }}" rel="stylesheet">
     <link href="{{ URL('css-js/css/navbar.css') }}" rel="stylesheet">
     <link href="{{ URL('css-js/css/carousel.css') }}" rel="stylesheet">
+    
 </head>
 
 
 <body>
+<div class="wrapper">
+                
+                <nav id="sidebar">
+                    <div id="dismiss">
+                        <i class="glyphicon glyphicon-arrow-left"></i>
+                    </div>
 
+                    <div class="sidebar-header">
+                        <h3>PURCHASH</h3>
+                    </div>
+
+                    <ul class="list-unstyled components">
+                        
+                        <li>
+                            <a class="navbar-text" href="#">Purchase Request</a>
+                        </li>
+                        <li>
+                            <a class="navbar-text" href="#">Request For Quotation</a>
+                        </li>
+                        <li>
+                            <a class="navbar-text" href="#">Purchase Order</a>
+                        </li>
+                        <li class="abc123">
+                            <a class="abc123" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Master Data</a>
+                                <ul class="collapse list-unstyled" id="homeSubmenu">
+                                    <li>
+                                        <a class="navbar-text" href="#">Vendor</a>
+                                    </li>
+                                    <li>
+                                        <a class="navbar-text" href="#">Product</a>
+                                    </li>
+                                    <li>
+                                        <a class="navbar-text" href="#">User</a>
+                                    </li>
+                                    
+                                </ul>
+                    </li>
+                    </ul>
+                    <ul class="list-unstyled CTAs">
+                    <li>
+                        <a href="{{ URL('/user-logout') }}" class="download">Logout</a>
+                    </li>
+                </ul>
+                </nav>
 <div class="card text-dark bg-light mb-3">
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                            <i class="fas fa-align-left"></i>
+                            
+                        </button>
+                        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fas fa-align-justify"></i>
+                        </button>
         <a class="navbar-brand" href="#">Purchash</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -153,6 +338,35 @@
         }
         startTime();
     </script>
+                <div class="overlay"></div>
+
+
+            <!-- jQuery CDN -->
+            <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+            <!-- Bootstrap Js CDN -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <!-- jQuery Custom Scroller CDN -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $("#sidebar").mCustomScrollbar({
+                        theme: "minimal"
+                    });
+
+                    $('#dismiss, .overlay').on('click', function () {
+                        $('#sidebar').removeClass('active');
+                        $('.overlay').fadeOut();
+                    });
+
+                    $('#sidebarCollapse').on('click', function () {
+                        $('#sidebar').addClass('active');
+                        $('.overlay').fadeIn();
+                        $('.collapse.in').toggleClass('in');
+                        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                    });
+                });
+            </script>
 </body>
 
 </html>

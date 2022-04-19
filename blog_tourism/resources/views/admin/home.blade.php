@@ -10,7 +10,7 @@
 
     <?php $data_user = \App\User::find(session('admin_id')); ?>
     <h1 class="display-4">Wonderful Indonesia</h1>
-    <p class="lead">Blog Tourism</p>
+    <p class="lead">Purchash</p>
     <p class="lead">Administrator</p>
 </div>
 <div class="container marketing">
