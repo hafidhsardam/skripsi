@@ -1,5 +1,10 @@
 @extends('admin.index')
 @section('content')
+<div>
+<button type="button" class="btn btn-dark">CREATE</button>
+</div>
+<hr>
+<div>
 <table class="table table-striped table-dark">
   <thead>
     <tr>
@@ -30,4 +35,6 @@
     </tr>
   </tbody>
 </table>
+</div>
+
 @endsection
