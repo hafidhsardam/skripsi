@@ -28,6 +28,7 @@ Route::get('/user-logout', 'UserController@logout');
 
 //USER
 
+Route::get('/userlogin', 'AdminController@PurchaseRequest')->middleware('user');
 Route::get('/categories/{id}', 'UserController@categories');
 Route::get('/about_us', 'UserController@about_us');
 Route::get('/blog_detail/{id}', 'UserController@blog_detail');
@@ -41,7 +42,7 @@ Route::post('/blog_update', 'UserController@blog_update')->middleware('user');
 Route::get('/blog_delete/{id}', 'UserController@blog_delete')->middleware('user');
 
 //ADMIN
-Route::get('/admin', 'AdminController@index')->middleware('admin');
+Route::get('/admin', 'AdminController@PurchaseRequest')->middleware('admin');
 Route::get('/admin/profile', 'AdminController@profile')->middleware('admin');
 Route::post('/admin/profile_update', 'AdminController@profile_update')->middleware('admin');
 Route::get('/admin/manage_categorie', 'AdminController@categories_all')->middleware('admin');

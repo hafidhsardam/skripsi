@@ -97,9 +97,12 @@
                 </div>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit" >Login</button>
-            <center>
-                <h1 class="h4 mb-1 font-weight-normal">© 2022 PURCHASH ERP</h1>
-            </center>
+            <br>
+            <div>
+                <center>
+                    <p2>© 2022 PURCHASH ERP</p2>
+                </center>
+            </div>
         </form>
 </div>
 @endsection

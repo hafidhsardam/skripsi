@@ -207,7 +207,7 @@ a.article, a.article:hover {
                 </nav>
 <div class="card text-dark bg-light mb-3">
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    {{-- <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <button type="button" id="sidebarCollapse" class="btn btn-info">
                             <i class="fas fa-align-left"></i>
                             
@@ -278,7 +278,7 @@ a.article, a.article:hover {
                 </ul>
             </form>
         </div>
-    </nav>
+    </nav> --}}
 
     @yield('content')
 

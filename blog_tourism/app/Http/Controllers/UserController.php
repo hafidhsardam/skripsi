@@ -72,7 +72,7 @@ class UserController extends Controller
             $data = User::where(["email" => $email, "role" => "user", "password" => $password])->first();
             if ($data) {
                 session(['user_id' => $data->id]);
-                return redirect('/')->with('alert-login', "Anda berhasil login.");
+                return redirect('/userlogin')->with('alert-login', "Anda berhasil login.");
             } else {
                 return redirect('/login_user')->with('alert-login', "Maaf. Gagal login, mohon periksa username dan password anda.");
             }
