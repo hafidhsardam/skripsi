@@ -220,44 +220,13 @@ a.article, a.article:hover {
                             <i class="fas fa-align-justify"></i>
                         </button>
                         
-            <a class="navbar-brand" href="#">Purchash</a>
+            <a class="navbar-brand" href="http://127.0.0.1:8000/PurchaseRequest">Purchash</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarsExample04">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item <?= (session('menu_admin') == 'home') ? 'active' : ''; ?>">
-                        <a class="nav-link" href="{{ URL('/admin') }}">Home</a>
-                    </li>
-                    <li class="nav-item <?= (session('menu_admin') == 'profil') ? 'active' : ''; ?>">
-                        <a class="nav-link" href="{{ URL('/admin/profile') }}">Profil</a>
-                    </li>
-                    <li class="nav-item <?= (session('menu_admin') == 'manage_categorie') ? 'active' : ''; ?>">
-                        <a class="nav-link" href="{{ URL('/admin/manage_categorie') }}">Manage Categorie</a>
-                    </li>
-                    <li class="nav-item <?= (session('menu_admin') == 'blog') ? 'active' : ''; ?>">
-                        <a class="nav-link" href="{{ URL('/admin/blog_all') }}">Blog</a>
-                    </li>
-                    <li class="nav-item <?= (session('menu_admin') == 'user') ? 'active' : ''; ?>">
-                        <a class="nav-link" href="{{ URL('/admin/user_all') }}">User Account</a>
-                    </li>
-                    <li class="nav-item dropdown <?= (session('menu_admin') == 'categories') ? 'active' : ''; ?>">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <?php $categorie1 = \App\Categorie::all(); ?>
-                            @foreach ($categorie1 as $cat1)
-                            <a class="dropdown-item" href="{{ URl('/admin/categories/'.$cat1->id) }}">{{ $cat1->name }}</a>
-                            @endforeach
-                        </div>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-md-0">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" role="button" href="{{ URL('/user-logout') }}"><i class="fa fa-arrow-left"></i> Logout</a>
-                        </li>
-                    </ul>
-                </form>
+            
+               
             </div>
         </nav>
 
