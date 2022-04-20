@@ -152,7 +152,7 @@ a.article, a.article:hover {
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
     <!-- Bootstrap core CSS -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
     <link href="{{ URL('css-js/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
@@ -179,25 +179,25 @@ a.article, a.article:hover {
                     <ul class="list-unstyled components">
                         
                         <li>
-                            <a class="navbar-text" href="#">Purchase Request</a>
+                            <a class="navbar-text" href="http://127.0.0.1:8000/PurchaseRequest">Purchase Request</a>
                         </li>
                         <li>
-                            <a class="navbar-text" href="#">Request For Quotation</a>
+                            <a class="navbar-text" href="http://127.0.0.1:8000/RFQ">Request For Quotation</a>
                         </li>
                         <li>
-                            <a class="navbar-text" href="#">Purchase Order</a>
+                            <a class="navbar-text" href="http://127.0.0.1:8000/PurchaseOrder">Purchase Order</a>
                         </li>
                         <li class="abc123">
                             <a class="abc123" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Master Data</a>
                                 <ul class="collapse list-unstyled" id="homeSubmenu">
                                     <li>
-                                        <a class="navbar-text" href="#">Vendor</a>
+                                        <a class="navbar-text" href="http://127.0.0.1:8000/Vendor">Vendor</a>
                                     </li>
                                     <li>
-                                        <a class="navbar-text" href="#">Product</a>
+                                        <a class="navbar-text" href="http://127.0.0.1:8000/Product">Product</a>
                                     </li>
                                     <li>
-                                        <a class="navbar-text" href="#">User</a>
+                                        <a class="navbar-text" href="http://127.0.0.1:8000/User">User</a>
                                     </li>
                                     
                                 </ul>
