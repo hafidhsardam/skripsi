@@ -1,10 +1,29 @@
 @extends('admin.index')
 @section('content')
-<div>
+<style>
+    .kotak {
+        position: sticky;
+        width: auto;
+        height: auto;
+        padding: 20px;
+
+        background: #FFFFFF;
+        /* 1 */
+
+        box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+        border-radius: 19.0044px;
+    }
+    .table{
+        box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+        border-radius: 19.0044px;
+    }
+</style>
+<h1>Purchase Request</h1>
+<div class='kotak'>
     <div>
         <button type="button" class="btn btn-dark">CREATE</button>
     </div>
-    <hr>
+    <br>
     <div>
         <table class="table table-striped table-dark">
             <thead>
