@@ -13,7 +13,7 @@
         width: 550px;
         height: 500px;
         left: 520px;
-        top: 230px;
+        top: 120px;
 
         background: #FFFFFF;
         /* 1 */
@@ -64,7 +64,7 @@
         <form class="form-signin" method="post" action="{{ URL('login_validation') }}">
             @csrf
             <center>
-                <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+                <h1 class="h3 mb-3 font-weight-bold">Login</h1>
             </center>
             @if ($message = Session::get('alert-login'))
             <div class="alert alert-danger alert-block">
