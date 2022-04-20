@@ -13,12 +13,24 @@
         box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
         border-radius: 19.0044px;
     }
-    .table{
+
+    .table {
         box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
         border-radius: 19.0044px;
     }
+    .input-group{
+        padding: 20px;
+    }
 </style>
-<h1>Vendor</h1>
+<div>
+    <h1>Vendor</h1>
+    <div class="input-group rounded">
+        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+        <span class="input-group-text border-0" id="search-addon">
+            <i class="fas fa-search"></i>
+        </span>
+    </div>
+</div>
 <div class='kotak'>
     <div>
         <button type="button" class="btn btn-dark">CREATE</button>
