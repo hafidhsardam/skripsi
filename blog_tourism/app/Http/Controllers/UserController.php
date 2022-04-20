@@ -21,6 +21,8 @@ class UserController extends Controller
         return view("user.home");
     }
 
+ 
+
     public function register_user()
     {
         session(['menu_user' => 'register']);

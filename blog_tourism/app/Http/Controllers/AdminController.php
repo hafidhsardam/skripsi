@@ -21,6 +21,46 @@ class AdminController extends Controller
         return view("admin.home");
     }
 
+    public function PurchaseRequest()
+    {
+        session(['menu_admin' => 'home']);
+        return view("admin.PurchaseRequest");
+    }
+
+    public function RFQ()
+    {
+        session(['menu_admin' => 'home']);
+        return view("admin.RFQ");
+    }
+
+    public function PurchaseOrder()
+    {
+        session(['menu_admin' => 'home']);
+        return view("admin.PurchaseOrder");
+    }
+
+
+    public function Vendor()
+    {
+        session(['menu_admin' => 'home']);
+        return view("admin.Vendor");
+    }
+
+
+    public function Product()
+    {
+        session(['menu_admin' => 'home']);
+        return view("admin.Product");
+    }
+
+
+    public function User()
+    {
+        session(['menu_admin' => 'home']);
+        return view("admin.User");
+    }
+
+
     public function profile()
     {
         session(['menu_admin' => 'profil']);

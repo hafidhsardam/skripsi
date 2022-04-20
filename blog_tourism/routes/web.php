@@ -17,13 +17,17 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+//LANDING PAGE
+Route::get('/', 'UserController@login_user');
+
 Route::get('/register_user', 'UserController@register_user');
 Route::post('/register_validation', 'UserController@register_validation');
 Route::get('/login_user', 'UserController@login_user');
 Route::post('/login_validation', 'UserController@login_validation');
 Route::get('/user-logout', 'UserController@logout');
 
-Route::get('/', 'UserController@index');
+//USER
+
 Route::get('/categories/{id}', 'UserController@categories');
 Route::get('/about_us', 'UserController@about_us');
 Route::get('/blog_detail/{id}', 'UserController@blog_detail');
@@ -36,6 +40,7 @@ Route::get('/blog_edit/{id}', 'UserController@blog_edit')->middleware('user');
 Route::post('/blog_update', 'UserController@blog_update')->middleware('user');
 Route::get('/blog_delete/{id}', 'UserController@blog_delete')->middleware('user');
 
+//ADMIN
 Route::get('/admin', 'AdminController@index')->middleware('admin');
 Route::get('/admin/profile', 'AdminController@profile')->middleware('admin');
 Route::post('/admin/profile_update', 'AdminController@profile_update')->middleware('admin');
@@ -58,3 +63,9 @@ Route::post('/admin/user_update', 'AdminController@user_update')->middleware('ad
 Route::get('/admin/user_delete/{id}', 'AdminController@user_delete')->middleware('admin');
 Route::get('/admin/categories/{id}', 'AdminController@categories_blog')->middleware('admin');
 Route::get('/admin/blog_detail/{id}', 'AdminController@blog_detail')->middleware('admin');
+Route::get('/PurchaseRequest', 'AdminController@PurchaseRequest')->middleware('admin');
+Route::get('/RFQ', 'AdminController@RFQ')->middleware('admin');
+Route::get('/PurchaseOrder', 'AdminController@PurchaseOrder')->middleware('admin');
+Route::get('/Vendor', 'AdminController@Vendor')->middleware('admin');
+Route::get('/Product', 'AdminController@Product')->middleware('admin');
+Route::get('/User', 'AdminController@User')->middleware('admin');
