@@ -28,7 +28,7 @@
 </div>
 <div class='kotak'>
     <div>
-     <a  href="http://127.0.0.1:8000/CreatePurchaseRequest"> <button type="button" class="btn btn-dark">EDIT</button> </a> 
+        <a  href="http://127.0.0.1:8000/CreatePurchaseRequest"> <button type="button" class="btn btn-dark">SAVE</button> </a> 
 
      <a  href="http://127.0.0.1:8000/CreatePurchaseRequest"> <button type="button" class="btn btn-dark">DISCARD</button> </a>
     </div>
@@ -37,10 +37,10 @@
         <table class="table table-striped table-dark">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Unit Of Measure</th>
+                    <th scope="col">Quantity</th>
                 </tr>
             </thead>
             <tbody>
