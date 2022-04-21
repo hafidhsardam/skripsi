@@ -28,7 +28,11 @@
 </div>
 <div class='kotak'>
     <div>
+<<<<<<< HEAD
         <a  href="http://127.0.0.1:8000/CreatePurchaseOrder"> <button type="button" class="btn btn-dark">SAVE</button> </a> 
+=======
+        <a  href="http://127.0.0.1:8000/CreatePurchaseRequest"> <button type="button" class="btn btn-dark">EDIT</button> </a> 
+>>>>>>> parent of 19baeeb (1)
 
         <a  href="http://127.0.0.1:8000/CreateOrder"> <button type="button" class="btn btn-dark">DISCARD</button> </a>
     </div>

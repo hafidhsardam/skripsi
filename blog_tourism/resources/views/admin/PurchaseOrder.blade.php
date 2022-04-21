@@ -45,10 +45,10 @@
         <table class="table table-striped table-dark">
             <thead>
                 <tr>
-                    <th scope="col">No</th>
-                    <th scope="col">Vendor</th>
-                    <th scope="col">Create Date</th>
-                    <th scope="col">Status</th>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
                 </tr>
             </thead>
             <tbody>

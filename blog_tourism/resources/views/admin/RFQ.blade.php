@@ -30,7 +30,7 @@
 
 <tr>
     <th>
-        <a href="http://127.0.0.1:8000/CreateRFQ"> <button type="button" class="btn btn-dark">CREATE</button> </a>
+        <a href="http://127.0.0.1:8000/CreatePurchaseRequest"> <button type="button" class="btn btn-dark">CREATE</button> </a>
     </th>
     <th style="width: 100%;">
         <div class="input-group rounded">
@@ -47,9 +47,10 @@
         <table class="table table-striped table-dark">
             <thead>
                 <tr>
-                    <th scope="col">No</th>
-                    <th scope="col">Vendor</th>
-                    <th scope="col">Create Date</th>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
                 </tr>
             </thead>
             <tbody>
@@ -57,19 +58,19 @@
                     <th scope="row">1</th>
                     <td>Mark</td>
                     <td>Otto</td>
-                   
+                    <td>@mdo</td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
                     <td>Jacob</td>
                     <td>Thornton</td>
-                   
+                    <td>@fat</td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
                     <td>Larry</td>
                     <td>the Bird</td>
-                  
+                    <td>@twitter</td>
                 </tr>
             </tbody>
         </table>
