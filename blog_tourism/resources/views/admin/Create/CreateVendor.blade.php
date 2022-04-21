@@ -32,6 +32,64 @@
 
         <a  href="http://127.0.0.1:8000/CreatePurchaseRequest"> <button type="button" class="btn btn-dark">DISCARD</button> </a>
     </div>
+
+    <br>
+
+    <div>
+        <form class="form-PR" method="post">
+            @csrf
+
+            <form class="needs-validation" novalidate>
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label for="validationTooltip01">Name</label>
+                    <input type="text" class="form-control" id="validationTooltip01" placeholder="" value="" required>
+                    <div class="invalid-tooltip">
+                      Please input vendor
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="validationTooltip02">Phone</label>
+                    <input type="text" class="form-control" id="validationTooltip02" placeholder="" value="" required>
+                    <div class="valid-tooltip">
+                      Looks good!
+                    </div>
+                  </div>
+                  
+
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                      <label for="validationTooltip01">Address</label>
+                      <input type="text" class="form-control" id="validationTooltip01" placeholder="" value="" required>
+                      <div class="invalid-tooltip">
+                        Please input vendor
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label for="validationTooltip02">Email</label>
+                      <input type="text" class="form-control" id="validationTooltip02" placeholder="" value="" required>
+                      <div class="valid-tooltip">
+                        Looks good!
+                      </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                      <label for="validationTooltip01">Note</label>
+                      <input type="text" class="form-control" id="validationTooltip01" placeholder="" value="" required>
+                      <div class="invalid-tooltip">
+                        Please input vendor
+                      </div>
+                    </div>
+
+                    
+  
+                  </div>
+              </form>
+        </form>
+</div>
     <br>
     <div>
         <table class="table table-striped table-dark">

@@ -32,6 +32,51 @@
 
         <a  href="http://127.0.0.1:8000/CreatePurchaseRequest"> <button type="button" class="btn btn-dark">DISCARD</button> </a>
     </div>
+
+    <br>
+    
+    <div>
+        <form class="form-PR" method="post">
+            @csrf
+
+            <form class="needs-validation" novalidate>
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label for="validationTooltip01">Vendor</label>
+                    <input type="text" class="form-control" id="validationTooltip01" placeholder="" value="" required>
+                    <div class="invalid-tooltip">
+                      Please input vendor
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="validationTooltip02">Create Date</label>
+                    <input type="date" class="form-control" id="validationTooltip02" placeholder="Last name" value="" required>
+                    <div class="valid-tooltip">
+                      Looks good!
+                    </div>
+                  </div>
+                  
+
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                      <label for="validationTooltip01">Note</label>
+                      <input type="text" class="form-control" id="validationTooltip01" placeholder="" value="" required>
+                      <div class="invalid-tooltip">
+                        Please input vendor
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label for="validationTooltip02">Order Date</label>
+                      <input type="date" class="form-control" id="validationTooltip02" placeholder="Last name" value="" required>
+                      <div class="valid-tooltip">
+                        Looks good!
+                      </div>
+                    </div>
+                </div>
+              </form>
+        </form>
+</div>
     <br>
     <div>
         <table class="table table-striped table-dark">

@@ -30,7 +30,7 @@
 
 <tr>
     <th>
-        <a href="http://127.0.0.1:8000/CreatePurchaseRequest"> <button type="button" class="btn btn-dark">CREATE</button> </a>
+        <a href="http://127.0.0.1:8000/CreateUser"> <button type="button" class="btn btn-dark">CREATE</button> </a>
     </th>
     <th style="width: 100%;">
         <div class="input-group rounded">

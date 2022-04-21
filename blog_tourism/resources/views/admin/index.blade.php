@@ -23,7 +23,7 @@
     height: 35px;
     line-height: 35px;
     text-align: center;
-    background: #7386D5;
+    background: #ffffff;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -53,7 +53,7 @@
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    border-bottom: 1px solid #ffffff;
 }
 
 #sidebar ul p {
@@ -67,13 +67,13 @@
     display: block;
 }
 #sidebar ul li a:hover {
-    color: #7386D5;
+    color: #000000;
     background: #fff;
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
-    color: #fff;
-    background: #6d7fcc;
+    color: rgb(0, 0, 0);
+    background: #ffffff;
 }
 
 
@@ -113,7 +113,7 @@ ul.CTAs a {
 }
 a.download {
     background: #fff;
-    color: #7386D5;
+    color: #000000;
 }
 a.article, a.article:hover {
     background: #6d7fcc !important;
@@ -207,8 +207,16 @@ a.article, a.article:hover {
                     <li>
                         <a href="{{ URL('/user-logout') }}" class="download">Logout</a>
                     </li>
+                    <br>
+                    <div>
+                        <center>
+                            <p1>© 2022 PURCHASH ERP</p1>
+                        </center>
+                    </div>
                 </ul>
                 </nav>
+
+                
 
         <div class="card text-dark bg-light mb-3" style="max-width: 100%;">
             <nav class="navbar navbar-expand-md navbar-dark bg-dark">
