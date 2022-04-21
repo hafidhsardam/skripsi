@@ -82,10 +82,10 @@
         <table class="table table-striped table-dark">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Unit Of Measure</th>
+                    <th scope="col">Quantity</th>
                 </tr>
             </thead>
             <tbody>
