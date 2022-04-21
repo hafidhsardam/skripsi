@@ -60,6 +60,46 @@ class AdminController extends Controller
         return view("admin.User");
     }
 
+    // CREATE
+
+    public function CreatePurchaseRequest()
+    {
+        session(['menu_admin' => 'PurchaseRequest']);
+        return view("admin.Create.CreatePurchaseRequest");
+    }
+
+    public function CreateRFQ()
+    {
+        session(['menu_admin' => 'RFQ']);
+        return view("admin.Create.CreateRFQ");
+    }
+
+    public function CreatePurchaseOrder()
+    {
+        session(['menu_admin' => 'PurchaseOrder']);
+        return view("admin.Create.CreatePurchaseOrder");
+    }
+
+    public function CreateVendor()
+    {
+        session(['menu_admin' => 'Vendor']);
+        return view("admin.Create.CreateVendor");
+    }
+
+    public function CreateProduct()
+    {
+        session(['menu_admin' => 'Product']);
+        return view("admin.Create.CreateProduct");
+    }
+
+    public function CreateUser()
+    {
+        session(['menu_admin' => 'User']);
+        return view("admin.Create.CreateUser");
+    }
+
+
+
 
     public function profile()
     {
@@ -67,6 +107,8 @@ class AdminController extends Controller
         $data['user'] = User::find(session('admin_id'));
         return view("admin.profile", $data);
     }
+
+
 
     public function profile_update(Request $request)
     {

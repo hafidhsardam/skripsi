@@ -33,7 +33,7 @@
 </div>
 <div class='kotak'>
     <div>
-        <button type="button" class="btn btn-dark">CREATE</button>
+        <a href="http://127.0.0.1:8000/CreatePurchaseOrder"><button type="button" class="btn btn-dark">CREATE</button> </a>
     </div>
     <br>
     <div>

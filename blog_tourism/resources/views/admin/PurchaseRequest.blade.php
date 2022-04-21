@@ -33,7 +33,7 @@
 </div>
 <div class='kotak'>
     <div>
-        <button type="button" class="btn btn-dark">CREATE</button>
+      <button type="button" onclick="{{ redirect::to('CreatePurchaseRequest')}}" class="btn btn-dark">CREATE</button>
     </div>
     <br>
     <div>
