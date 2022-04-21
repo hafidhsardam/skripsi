@@ -28,7 +28,9 @@
 </div>
 <div class='kotak'>
     <div>
-        <a href="http://127.0.0.1:8000/CreateRFQ"><button type="button" class="btn btn-dark">CREATE</button> </a>
+        <a  href="http://127.0.0.1:8000/CreatePurchaseRequest"> <button type="button" class="btn btn-dark">EDIT</button> </a> 
+
+        <a  href="http://127.0.0.1:8000/CreatePurchaseRequest"> <button type="button" class="btn btn-dark">DISCARD</button> </a>
     </div>
     <br>
     <div>
