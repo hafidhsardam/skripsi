@@ -128,6 +128,13 @@ a.article, a.article:hover {
 .abc123{
     color: white;
     background-color: black;
+
+
+}
+
+.right{
+   padding-right: 0%;
+    
 }
 
 
@@ -176,6 +183,9 @@ a.article, a.article:hover {
                         <h3>PURCHASH</h3>
                     </div>
 
+                   
+                    
+
                     <ul class="list-unstyled components">
                         
                         <li>
@@ -218,25 +228,27 @@ a.article, a.article:hover {
 
                 
 
-        <div class="card text-dark bg-light mb-3" style="max-width: 100%;">
+          <div class="card text-dark bg-light mb-3" style="max-width: 100%;">
             <nav class="navbar navbar-expand-md navbar-dark bg-dark">
                 <button type="button" id="sidebarCollapse" class="btn btn-info">
-                            <i class="fas fa-align-left"></i>
-                            
-                        </button>
-                        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <i class="fas fa-align-justify"></i>
-                        </button>
-                        
-            <a class="navbar-brand" href="http://127.0.0.1:8000/PurchaseRequest">Purchash</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <i class="fas fa-align-left"></i>
+                
             </button>
+ 
+            <a class="navbar-brand" href="http://127.0.0.1:8000/PurchaseRequest">Purchash  </a>
+          
+          <div class="navbar-brand">
+                <h1 style="position : right"> Rafi </h1>
+          </div>    
+          
             <div class="collapse navbar-collapse" id="navbarsExample04">
             
-               
+          
             </div>
         </nav>
+   
+        
+    
 
         @yield('content')
 
