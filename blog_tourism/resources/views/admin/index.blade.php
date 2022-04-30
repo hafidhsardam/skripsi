@@ -238,7 +238,7 @@ a.article, a.article:hover {
             <a class="navbar-brand" href="http://127.0.0.1:8000/PurchaseRequest">Purchash  </a>
           
           <div class="navbar-brand">
-                <h1 style="position : right"> Rafi </h1>
+                <h1 style="position : right"> Admin(ini buat apa?) </h1>
           </div>    
           
             <div class="collapse navbar-collapse" id="navbarsExample04">
