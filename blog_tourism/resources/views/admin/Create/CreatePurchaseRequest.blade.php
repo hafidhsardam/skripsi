@@ -28,29 +28,29 @@
 </div>
 <div class='kotak'>
     <div>
-     <a  href="http://127.0.0.1:8000/CreatePurchaseRequest"> <button type="button" class="btn btn-dark">SAVE</button> </a> 
+    <button type="submit" class="btn btn-dark">SAVE</button>  
 
-     <a  href="http://127.0.0.1:8000/CreatePurchaseRequest"> <button type="button" class="btn btn-dark">DISCARD</button> </a>
+    <button type="button" class="btn btn-dark">DISCARD</button> 
     </div>
 
     <br>
 
     <div>
-        <form class="form-PR" method="post">
+        <form class="form-PR" method="post" action="{{ URL('CreatePurchaseRequest') }}">
             @csrf
 
             <form class="needs-validation" novalidate>
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label for="validationTooltip01">Vendor</label>
-                    <input type="text" class="form-control" id="validationTooltip01" placeholder="" value="" required>
+                    <input type="text" name = "vendor" class="form-control" id="validationTooltip01" placeholder="" value="" required>
                     <div class="invalid-tooltip">
                       Please input vendor
                     </div>
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="validationTooltip02">Create Date</label>
-                    <input type="date" class="form-control" id="validationTooltip02" placeholder="Last name" value="" required>
+                    <input type="date" name = "create_date" class="form-control" id="validationTooltip02" placeholder="Last name" value="" required>
                     <div class="valid-tooltip">
                       Looks good!
                     </div>
@@ -61,14 +61,14 @@
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
                       <label for="validationTooltip01">Note</label>
-                      <input type="text" class="form-control" id="validationTooltip01" placeholder="" value="" required>
+                      <input type="text" name = "note" class="form-control" id="validationTooltip01" placeholder="" value="" required>
                       <div class="invalid-tooltip">
                         Please input vendor
                       </div>
                     </div>
                     <div class="col-md-4 mb-3">
                       <label for="validationTooltip02">Order Date</label>
-                      <input type="date" class="form-control" id="validationTooltip02" placeholder="Last name" value="" required>
+                      <input type="date" name = "order_date" class="form-control" id="validationTooltip02" placeholder="Last name" value="" required>
                       <div class="valid-tooltip">
                         Looks good!
                       </div>
@@ -78,39 +78,35 @@
         </form>
 </div>
 <br>
+
     <div>
         <table class="table table-striped table-dark">
+         
             <thead>
                 <tr>
-                    <th scope="col">Product</th>
+                    <th scope="col">No</th>
                     <th scope="col">Description</th>
                     <th scope="col">Unit Of Measure</th>
                     <th scope="col">Quantity</th>
                 </tr>
             </thead>
+           
             <tbody>
+           
                 <tr>
-                    <th scope="row">1</th>
+                    <th scope="row"></th>
                     <td>Mark</td>
                     <td>Otto</td>
                     <td>@mdo</td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+               
+              
             </tbody>
+            
         </table>
     </div>
 </div>
+
 
 
 @endsection

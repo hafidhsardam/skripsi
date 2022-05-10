@@ -15,7 +15,7 @@ class DataTableSeeder extends Seeder
     {
         // Input admin to users table
         DB::table('users')->insert([
-            'name'           => 'Admin 1',
+            'name'           => 'Admin 100',
             'email'          => 'admin_1@gmail.com',
             'phone'          => '09123124123',
             'role'           => 'admin',

@@ -48,27 +48,20 @@
             <thead>
                 <tr>
                     <th scope="col">Name</th>
-                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
                    
                 </tr>
             </thead>
+            @foreach($pengguna as $ar)
             <tbody>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
+                    <th scope="row">{{ $ar -> name}}</th>
+                    <td>{{ $ar -> email}}</td>
                    
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                   
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                   
-                </tr>
+               
             </tbody>
+            @endforeach
         </table>
     </div>
 </div>
