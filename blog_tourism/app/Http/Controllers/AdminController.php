@@ -21,11 +21,6 @@ class AdminController extends Controller
         return view("admin.home");
     }
 
-    //coba manggil data
-
-  
-
-
     public function PurchaseRequest()
     {
         session(['menu_admin' => 'home']);
@@ -62,10 +57,7 @@ class AdminController extends Controller
     public function User()
     {
         session(['menu_admin' => 'home']);
-        $pengguna = DB::table('users')->get();
-    
-
-        return view("admin.User", ['pengguna' => $pengguna]);
+        return view("admin.User");
     }
 
     // CREATE
@@ -73,9 +65,6 @@ class AdminController extends Controller
     public function CreatePurchaseRequest()
     {
         session(['menu_admin' => 'PurchaseRequest']);
-
-        $purchase = DB::table('purchase_request')->name('');
-        
         return view("admin.Create.CreatePurchaseRequest");
     }
 
