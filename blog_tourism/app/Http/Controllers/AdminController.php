@@ -65,18 +65,36 @@ class AdminController extends Controller
     public function CreatePurchaseRequest()
     {
         session(['menu_admin' => 'PurchaseRequest']);
+       
+
         return view("admin.Create.CreatePurchaseRequest");
     }
 
-    public function CreateRFQ()
+    public function PostCreatePurchaseRequest(Request $request)
+    {
+        session(['menu_admin' => 'PurchaseRequest']);
+       
+      $request->validate([
+          'Vendor_name'=> 'required'
+      ]);
+
+        return view("admin.Create.PostCreatePurchaseRequest");
+    }
+
+  
+
+
+    public function CreateRFQ(Request $request)
     {
         session(['menu_admin' => 'RFQ']);
         return view("admin.Create.CreateRFQ");
     }
 
-    public function CreatePurchaseOrder()
+    public function CreatePurchaseOrder(Request $request)
     {
         session(['menu_admin' => 'PurchaseOrder']);
+
+
         return view("admin.Create.CreatePurchaseOrder");
     }
 

@@ -28,29 +28,29 @@
 </div>
 <div class='kotak'>
     <div>
-     <a  href="http://127.0.0.1:8000/CreatePurchaseRequest"> <button type="button" class="btn btn-dark">SAVE</button> </a> 
+    <button type="button" class="btn btn-dark">SAVE</button> 
 
-     <a  href="http://127.0.0.1:8000/CreatePurchaseRequest"> <button type="button" class="btn btn-dark">DISCARD</button> </a>
+    <button type="button" class="btn btn-dark">DISCARD</button> 
     </div>
 
     <br>
 
     <div>
-        <form class="form-PR" method="post">
+        <form class="form-PR" method="post" action="/Create/CreatePurchaseRequest">
             @csrf
 
             <form class="needs-validation" novalidate>
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label for="validationTooltip01">Vendor</label>
-                    <input type="text" class="form-control" id="validationTooltip01" placeholder="" value="" required>
+                    <input type="text" name = "Vendor_name" class="form-control" id="validationTooltip01" placeholder="" value="" required>
                     <div class="invalid-tooltip">
                       Please input vendor
                     </div>
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="validationTooltip02">Create Date</label>
-                    <input type="date" class="form-control" id="validationTooltip02" placeholder="Last name" value="" required>
+                    <input type="date" name = "Create_date" class="form-control" id="validationTooltip02" placeholder="Last name" value="" required>
                     <div class="valid-tooltip">
                       Looks good!
                     </div>
@@ -61,14 +61,14 @@
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
                       <label for="validationTooltip01">Note</label>
-                      <input type="text" class="form-control" id="validationTooltip01" placeholder="" value="" required>
+                      <input type="text" name = "Notes" class="form-control" id="validationTooltip01" placeholder="" value="" required>
                       <div class="invalid-tooltip">
-                        Please input vendor
+                        Looks good!
                       </div>
                     </div>
                     <div class="col-md-4 mb-3">
                       <label for="validationTooltip02">Order Date</label>
-                      <input type="date" class="form-control" id="validationTooltip02" placeholder="Last name" value="" required>
+                      <input type="date" name = "Order_date" class="form-control" id="validationTooltip02" placeholder="Last name" value="" required>
                       <div class="valid-tooltip">
                         Looks good!
                       </div>

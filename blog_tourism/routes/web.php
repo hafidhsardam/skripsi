@@ -73,6 +73,9 @@ Route::get('/User', 'AdminController@User')->middleware('admin');
 
 //CRAETE
 Route::get('/CreatePurchaseRequest', 'AdminController@CreatePurchaseRequest')->middleware('admin');
+Route::post('/PostCreatePurchaseRequest', 'AdminController@PostCreatePurchaseRequest')->middleware('admin');
+
+
 Route::get('/CreateRFQ', 'AdminController@CreateRFQ')->middleware('admin');
 Route::get('/CreatePurchaseOrder', 'AdminController@CreatePurchaseOrder')->middleware('admin');
 Route::get('/CreateVendor', 'AdminController@CreateVendor')->middleware('admin');
