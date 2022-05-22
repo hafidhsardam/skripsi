@@ -7,7 +7,7 @@
 @endsection
  
 @section('title_')
-<h5 id="form">Produk</h5><br>
+<h5 id="form">Products</h5><br>
 @endsection
 
 @section('content')    
@@ -21,7 +21,7 @@
         <table class="table">
             <tr>
                 <th>No</th>
-                <th>Produk Name</th>
+                <th>Product Name</th>
                 <th>Stok</th>
                 <th>Harga</th>
                 <th>Type</th>
@@ -37,7 +37,7 @@
             </tr>
             @empty
                 <div class="alert alert-danger">
-                    Data produk belum Tersedia.
+                    Data product belum Tersedia.
                 </div>
             @endforelse 
         </table>
