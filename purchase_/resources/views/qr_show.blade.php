@@ -16,7 +16,7 @@
             <input type="text" hidden name="id_purchase" id="id_purchase" value="{{$qr->id_purchase}}">
         @csrf
         <!-- @method('PUT')         -->
-        <a href="{{route('PurchaseRequest.create')}}" class="btn btn-success">Back</a>
+        <a href="{{route('RequestQuotations.index')}}" class="btn btn-success">Back</a>
         @if($qr->status == 'Approved')
         <button type="submit" class="btn btn-success">Create PO</button><br><br>
         @elseif(Auth::user()->level == 'admin'&&$qr->status == 'Waiting Approval')
