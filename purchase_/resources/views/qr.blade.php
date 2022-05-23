@@ -24,6 +24,7 @@
                 <th>No</th>
                 <th>Purchase Request</th>
                 <th>Vendor Name</th>
+                <th>Produk</th>
                 <th>Created Date</th>
                 <th>Status</th>
             </tr>
@@ -33,6 +34,7 @@
                 <td><a href="{{route('RequestQuotations.show', $vendors->id_quotation)}}">{{ $no++ }}</a></td>
                 <td>{{ $vendors->id_quotation }}</td>
                 <td>{{ $vendors->vendor_name }}</td>
+                <td>{{ $vendors->produk }}</td>
                 <td>{{ $vendors->created_at }}</td>
                 <td>{{ $vendors->status }}</td>                
             </tr>

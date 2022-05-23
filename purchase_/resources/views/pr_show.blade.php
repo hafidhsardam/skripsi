@@ -14,12 +14,14 @@
     <div class="shadow p-3 mb-5 bg-white rounded">
         <form method="post" action="{{route('PurchaseRequest.store')}}" id="dynamic_form">
         @csrf
-        @method('PUT')        
-        <a href="{{route('PurchaseRequest.create')}}"  class="btn btn-success">Back</a>
-        <a href="{{route('PurchaseRequest.edit', $pur_req->id_purchase)}}"  class="btn btn-success">Edit</a>
-        @if($pur_req->status == "In Process")
+        @method('PUT')
+        <a href="#" onclick="history.back()" class="btn btn-success">Back</a>
+        @if($pur_req->status == "Canceled")                
+        <a href="{{route('PurchaseRequest.edit', $pur_req->id_purchase)}}" hidden class="btn btn-success">Edit</a>
+        @elseif($pur_req->status == "In Process")
         <a href="{{URL::to('StoreRFQ', $pur_req->id_purchase)}}" class="btn btn-success">Create RFQ</a><br><br>
         @else
+        <a href="{{route('PurchaseRequest.edit', $pur_req->id_purchase)}}" hidden class="btn btn-success">Edit</a>
         <a href="{{URL::to('quotations', $pur_req->id_purchase)}}" class="btn btn-success" hidden>Create RFQ</a><br><br>
         @endif
         <div class="container col-md-9">
@@ -96,5 +98,6 @@
             </tbody>
         </table>
     </form>
+    <p>This data was created by {{$users->name}} on {{$users->created_at}}</p>
 </div>
 @endsection

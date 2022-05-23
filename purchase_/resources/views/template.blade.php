@@ -48,7 +48,7 @@
                     <a class="accr" href="{{ url('Dashboard') }}"><i class="fa fa-tachometer"></i>Dashboard</a>
                 </li>
                 <li class="@yield('title_PurReq')">
-                    <a class="accr" href="{{ url('PurchaseRequest') }}"><i class="fa fa-address-book"></i>Purchase Request</a>
+                    <a class="accr" href="{{ url('PurchaseRequest') }}"><i class="fa fa-shopping-cart"></i>Purchase Request</a>
                 </li>
                 <li class="@yield('title_RFQ')">
                     <a class="accr" href="{{ url('RequestQuotations') }}"><i class="fa fa-clone"></i>Request for Quotations</a>
@@ -57,7 +57,7 @@
                     <a class="accr" href="{{url('PurchaseOrder')}}"><i class="fa fa-calendar"></i>Purchase Orders</a>
                 </li>
                 <li class="@yield('title_Vendor')">
-                    <a class="accr" href="{{url('Vendor')}}"><i class="fa fa-chart-bar"></i>Vendors</a>
+                    <a class="accr" href="{{url('Vendor')}}"><i class="fa fa-id-badge"></i>Vendors</a>
                 </li>
                 <li class="@yield('title_Product')">
                     <a class="accr" href="{{url('Produk')}}"><i class="fa fa-copy"></i>Products</a>
@@ -67,7 +67,7 @@
                     <a class="accr" href="{{ url('Approval') }}"><i class="fa fa-bookmark"></i>Approval</a>
                 </li> -->
                 <li class="@yield('title_Users')">
-                    <a class="accr" href="{{ url('Users') }}"><i class="fa fa-bookmark"></i>Users</a>
+                    <a class="accr" href="{{ url('Users') }}"><i class="fa fa-users"></i>Users</a>
                 </li>
                 @endif
                 <br><br>
@@ -113,25 +113,13 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- <table class="table table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Product Name</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table> -->
-            @yield('content')     
+            </div>            
+            @yield('content')            
             <div class="container-fluid">
                 <div class="row cari">                    
                 </div>
             </div>
-        </div>
+        </div>        
     </div>
     @show
     @section('javascr')

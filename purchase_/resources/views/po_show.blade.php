@@ -127,5 +127,6 @@
                 </tbody>
             </table>
         </form>
-    </div>    
+        <p>This data was created by {{$users->name}} on {{$users->created_at}}</p>
+    </div>
 @endsection

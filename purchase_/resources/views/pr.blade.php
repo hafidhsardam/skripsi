@@ -23,6 +23,7 @@
                 <th>No</th>
                 <th>Purchase Request</th>
                 <th>Vendor Name</th>
+                <th>Product</th>
                 <th>Created Date</th>
                 <th>Status</th>
             </tr>
@@ -32,6 +33,7 @@
                 <td><a href="{{route('PurchaseRequest.show', $vendors->id_purchase)}}">{{ $no++ }}</a></td>
                 <td>{{ $vendors->id_purchase }}</td>
                 <td>{{ $vendors->vendor_name }}</td>
+                <td>{{ $vendors->produk }}</td>
                 <td>{{ $vendors->created_at }}</td>
                 <td>{{ $vendors->status }}</td>                
             </tr>

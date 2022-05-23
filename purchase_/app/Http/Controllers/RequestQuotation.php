@@ -22,8 +22,11 @@ class RequestQuotation extends Controller
         $pur_req = DB::table('request_quotations')
             ->join('purchase_reqs', 'purchase_reqs.id_purchase', '=', 'request_quotations.id_purchase')
             ->join('vendors','vendors.id_vendor', '=', 'purchase_reqs.vendor_id')
-            ->select('id_quotation','request_quotations.id_purchase','request_quotations.status','vendor_name','purchase_reqs.created_at','request_quotations.status')
+            ->join('purchase_prods','purchase_prods.id_purchase','=','purchase_reqs.id_purchase')
+            ->join('produk','produk.id_produk','=','purchase_prods.id_produk')
+            ->select('id_quotation','request_quotations.id_purchase',DB::raw('GROUP_CONCAT(nama_produk) as produk'),'vendor_name','purchase_reqs.created_at','request_quotations.status')
             ->orderBy('purchase_reqs.id_purchase', 'asc')
+            ->groupBy('id_quotation','vendor_name','request_quotations.id_purchase','purchase_reqs.created_at','request_quotations.status')
             ->paginate(5);
         return view('qr', compact('pur_req'));
     }
@@ -48,10 +51,11 @@ class RequestQuotation extends Controller
         $rq->id_quotation = $this->getIdPurchase();
         $rq->status = 'Waiting Approval';
         $pr->status = 'Waiting Approval';
+        $pr->quotations = 'y';
         $pr->save();
         $rq->save();
         $log = new LogHistory();
-        $log->id_data = $id;
+        $log->id_data = $rq->id_quotation;
         $log->status = 'Created Request Quotation';
         $log->id_user = Auth::user()->id_user;
         $log->save();
@@ -96,12 +100,14 @@ class RequestQuotation extends Controller
             ->first();
         $produk = DB::table('produk')->get();
         $vendor = DB::table('vendors')->get();
+        $users = DB::table('log_history')->join('users','users.id_user','=','log_history.id_user')
+            ->where('id_data', $id)->first();
         $apalah = DB::table('request_quotations')
             ->join('purchase_reqs', 'purchase_reqs.id_purchase', '=', 'request_quotations.id_purchase')
             ->join('purchase_prods', 'purchase_prods.id_purchase','=','purchase_reqs.id_purchase')
             ->where('id_quotation', $id)->get();
         // $qr = RequestQuotation_model::find($id);
-        return view('qr_show', compact('qr','produk','apalah','vendor'));
+        return view('qr_show', compact('qr','produk','apalah','vendor','users'));
     }
 
     /**

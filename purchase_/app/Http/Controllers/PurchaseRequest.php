@@ -19,11 +19,20 @@ class PurchaseRequest extends Controller
     public function index()
     {
         $pur_req = DB::table('purchase_reqs')
-            ->join('vendors','vendors.id_vendor', '=', 'purchase_reqs.vendor_id')
-            ->select('*')
-            ->where('quotations','n')
-            ->orderBy('id_purchase', 'asc')
-            ->paginate(5);
+        ->join('vendors','vendors.id_vendor', '=', 'purchase_reqs.vendor_id')
+        ->join('purchase_prods','purchase_prods.id_purchase','=','purchase_reqs.id_purchase')
+        ->join('produk','produk.id_produk','=','purchase_prods.id_produk')
+        ->select('purchase_reqs.id_purchase', DB::raw('GROUP_CONCAT(nama_produk) as produk'),'vendor_name','purchase_reqs.created_at','status')
+        ->groupBy('purchase_reqs.id_purchase','vendor_name','purchase_reqs.created_at','status')
+        ->where('quotations','n')
+        ->orderBy('id_purchase', 'asc')
+        ->paginate(5);
+        // $pur_req = DB::table('purchase_reqs')
+        //     ->join('vendors','vendors.id_vendor', '=', 'purchase_reqs.vendor_id')
+        //     ->select('*')
+        //     ->where('quotations','n')
+        //     ->orderBy('id_purchase', 'asc')
+        //     ->paginate(5);
         // $pur_req = Purchase_req::first()->orderBy('id_purchase', 'asc')->paginate(5);
         return view('pr', compact('pur_req'));
     }
@@ -104,7 +113,9 @@ class PurchaseRequest extends Controller
         $pur_prod = PurchaseProduct_Model::where('id_purchase',$id)->get();
         $vendor = DB::table('vendors')->get();
         $produk = DB::table('produk')->get();
-        return view('pr_show', compact('pur_req','vendor','produk','pur_prod'));
+        $users = DB::table('log_history')->join('users','users.id_user','=','log_history.id_user')
+            ->where('id_data', $id)->first();
+        return view('pr_show', compact('pur_req','vendor','produk','pur_prod', 'users'));
     }
 
     /**

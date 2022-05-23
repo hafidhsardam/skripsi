@@ -15,6 +15,8 @@ class Invoice_pdf extends Controller
         $po = DB::table('purchase_orders')
         ->join('purchase_reqs', 'purchase_reqs.id_purchase','=','purchase_orders.id_purchase')
         ->join('purchase_prods', 'purchase_prods.id_purchase','=','purchase_orders.id_purchase')
+        ->join('produk','produk.id_produk','=','purchase_prods.id_produk')
+        ->join('vendors','vendors.id_vendor','=','purchase_reqs.vendor_id')
         ->where('id_po', $id)->get();
         $data = [
             'title' => 'Purchase Orders Invoice',
@@ -30,6 +32,8 @@ class Invoice_pdf extends Controller
     {
         $pr = DB::table('purchase_reqs')
         ->join('purchase_prods', 'purchase_prods.id_purchase','=','purchase_reqs.id_purchase')
+        ->join('produk','produk.id_produk','=','purchase_prods.id_produk')
+        ->join('vendors','vendors.id_vendor','=','purchase_reqs.vendor_id')
         ->where('purchase_reqs.id_purchase', $id)->get();
         $data = [
             'title' => 'Purchase Request Invoice',

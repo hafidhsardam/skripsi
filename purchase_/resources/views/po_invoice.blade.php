@@ -12,22 +12,30 @@
 <body>
     <h3>{{ $title }}</h3>
     <p>Date Printed: {{ $date }}</p>    
-    <p>{{ $id_po }}</p>  
+    <p>Kode Purchase: {{ $id_po }}</p>
+    <p>Nama Vendor: {{ $vendor_name }}</p>
     <table class="table table-bordered">
         <tr>
-            <th>Kode Produk</th>
+            <th>Nama Produk</th>
             <th>Kuantitas</th>
             <th>Deskripsi</th>
+            <th>Vendor</th>
             <th>Harga</th>
         </tr>
+        <?php $total = 0; ?>
         @foreach($data_po as $po)
+        <?php $total += $po->price; ?>
         <tr>
-            <td>{{ $po->id_produk }}</td>
+            <td>{{ $po->nama_produk }}</td>
             <td>{{ $po->qty }}</td>
             <td>{{ $po->deskripsi }}</td>
+            <td>{{ $po->vendor_name }}</td>
             <td>{{ $po->price }}</td>
         </tr>
         @endforeach
+        <tr>
+            <td>Total: {{$total}}</td>
+        </tr>
     </table>
 </body>
 </html>

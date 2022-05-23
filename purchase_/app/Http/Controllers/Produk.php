@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Produk_model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Produk extends Controller
 {
@@ -14,7 +15,7 @@ class Produk extends Controller
      */
     public function index()
     {
-        $product = Produk_model::latest()->paginate(5);
+        $product = Produk_model::latest()->paginate(5);        
         return view('produk', compact('product'));
     }
 
@@ -77,7 +78,7 @@ class Produk extends Controller
      */
     public function edit($id)
     {
-        $produk = Produk_model::find($id);
+        $produk = Produk_model::find($id);        
         return view('produk_edit', compact('produk'));
     }
 

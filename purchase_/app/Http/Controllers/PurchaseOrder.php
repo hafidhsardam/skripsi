@@ -21,7 +21,10 @@ class PurchaseOrder extends Controller
         $po = DB::table('purchase_orders')
         ->join('purchase_reqs','purchase_reqs.id_purchase','=','purchase_orders.id_purchase')
         ->join('vendors', 'vendors.id_vendor','=','purchase_reqs.vendor_id')
-        ->select('id_po','vendor_name','purchase_reqs.created_at','purchase_orders.status')
+        ->join('purchase_prods','purchase_prods.id_purchase','=','purchase_reqs.id_purchase')
+        ->join('produk','produk.id_produk','=','purchase_prods.id_produk')
+        ->select('id_po','vendor_name','purchase_reqs.created_at','purchase_orders.status',DB::raw('GROUP_CONCAT(nama_produk) as produk'))
+        ->groupBy('id_po','vendor_name','purchase_reqs.created_at','status')
         ->paginate(5);
         return view('po', compact('po'));
     }
@@ -106,6 +109,9 @@ class PurchaseOrder extends Controller
             ->select('id_po','vendor_id', 'purchase_orders.id_purchase', 'purchase_orders.created_at', 'notes', 'purchase_orders.status', 'purchase_reqs.order_date')
             ->where('id_po', $id)->first();
 
+        $users = DB::table('log_history')->join('users','users.id_user','=','log_history.id_user')
+            ->where('id_data', $id)->first();
+
         $vendor = DB::table('vendors')->get();
 
         $produk = DB::table('produk')->get();
@@ -115,7 +121,7 @@ class PurchaseOrder extends Controller
             ->join('purchase_prods','purchase_prods.id_purchase', '=', 'purchase_orders.id_purchase')
             ->select('*')
             ->where('id_po', $id)->get();
-        return view('po_show', compact('po','pos','vendor','produk'));
+        return view('po_show', compact('po','pos','vendor','produk', 'users'));
     }
     
     public function cancel($id)
