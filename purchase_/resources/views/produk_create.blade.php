@@ -7,7 +7,7 @@
 @endsection
  
 @section('title_')
-<h5 id="form">Produk</h5><br>
+<h5 id="form">Product</h5><br>
 @endsection
 
 @section('content')

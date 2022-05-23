@@ -7,7 +7,7 @@
 @endsection
  
 @section('title_')
-<h5 id="form">Produk</h5><br>
+<h5 id="form">Product</h5><br>
 @endsection
 
 @section('content')    
@@ -23,9 +23,9 @@
         <table class="table">
             <tr>
                 <th>No</th>
-                <th>Produk Name</th>
-                <th>Stok</th>
-                <th>Harga</th>
+                <th>Product Name</th>
+                <th>Stock</th>
+                <th>Price</th>
                 <th>Type</th>
             </tr>
             <?php $no=1 ?>

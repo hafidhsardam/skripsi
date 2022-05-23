@@ -17,7 +17,7 @@
             <p>{{ $message }}</p>
         </div>
         @endif
-        <a href="{{url('RequestQuotations')}}" class="btn btn-success">CREATE</a><br><br>
+        <!-- <a href="{{url('RequestQuotations')}}" class="btn btn-success">CREATE</a><br><br> -->
         <table class="table">
             <tr>
                 <th>No</th>
