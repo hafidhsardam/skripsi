@@ -45,7 +45,7 @@
                 
                 <h2 style="color: white; font-weight:550;margin: 20px;">PURCHASE</h2><br><br>                
                 <li class="@yield('title_Dashboard')">
-                    <a class="accr" href=""><i class="fa fa-tachometer"></i>Dashboard</a>
+                    <a class="accr" href="{{ url('Dashboard') }}"><i class="fa fa-tachometer"></i>Dashboard</a>
                 </li>
                 <li class="@yield('title_PurReq')">
                     <a class="accr" href="{{ url('PurchaseRequest') }}"><i class="fa fa-address-book"></i>Purchase Request</a>

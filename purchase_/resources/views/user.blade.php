@@ -18,6 +18,10 @@
         <div class="alert alert-success">
             <p>{{ $message }}</p>
         </div>
+        @elseif ($message = Session::get('error'))
+        <div class="alert alert-danger">
+            <p>{{ $message }}</p>
+        </div>
         @endif
         <a href="{{url('Users/create')}}" class="btn btn-success">CREATE</a><br><br>
         <table class="table">

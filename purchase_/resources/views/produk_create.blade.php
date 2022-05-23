@@ -7,15 +7,17 @@
 @endsection
  
 @section('title_')
-<h5 id="form">Product</h5><br>
+<h5 id="form">Produk</h5><br>
 @endsection
 
 @section('content')
 <div class="shadow p-3 mb-5 bg-white rounded">
     <form action="{{route('Produk.store')}}" method="post">
     @csrf
+    @if(Auth::user()->level=='admin')
         <button type="submit" class="btn btn-success">Save</button>            
-        <button type="reset" class="btn btn-success">Discard</button><br><br>
+        <button type="reset" class="btn btn-success">Discard</button>
+    @endif<br><br>
         <div class="form-group container col-md-10">
             <div class="row">
                 <div class="col-md-2">

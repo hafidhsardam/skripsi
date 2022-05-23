@@ -24,7 +24,6 @@
                 <th>Purchase Request</th>
                 <th>Vendor Name</th>
                 <th>Created Date</th>
-                <th>Product</th>
                 <th>Status</th>
             </tr>
             <?php $no=1 ?>

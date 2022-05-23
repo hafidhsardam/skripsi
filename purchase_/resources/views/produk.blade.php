@@ -7,7 +7,7 @@
 @endsection
  
 @section('title_')
-<h5 id="form">Products</h5><br>
+<h5 id="form">Produk</h5><br>
 @endsection
 
 @section('content')    
@@ -17,11 +17,13 @@
             <p>{{ $message }}</p>
         </div>
         @endif
-        <a href="{{url('Produk/create')}}" class="btn btn-success">CREATE</a><br><br>
+        @if(Auth::user()->level=='admin')
+        <a href="{{url('Produk/create')}}" class="btn btn-success">CREATE</a>
+        @endif<br><br>
         <table class="table">
             <tr>
                 <th>No</th>
-                <th>Product Name</th>
+                <th>Produk Name</th>
                 <th>Stok</th>
                 <th>Harga</th>
                 <th>Type</th>
@@ -37,7 +39,7 @@
             </tr>
             @empty
                 <div class="alert alert-danger">
-                    Data product belum Tersedia.
+                    Data produk belum Tersedia.
                 </div>
             @endforelse 
         </table>

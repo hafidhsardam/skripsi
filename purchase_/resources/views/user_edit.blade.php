@@ -10,6 +10,8 @@
 <h5 id="form">Users</h5><br>
 @endsection
 
+@if(Auth::user()->level == 'admin')
+
 @section('content')
 <div class="shadow p-3 mb-5 bg-white rounded">
     <form method="POST" action="{{ route('Users.update',$users->id_user) }}">
@@ -61,7 +63,7 @@
             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
             <div class="col-md-6">
-                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="new_password" required autocomplete="new-password">
 
                 @error('password')
                     <span class="invalid-feedback" role="alert">

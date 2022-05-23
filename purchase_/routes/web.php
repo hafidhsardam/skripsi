@@ -33,7 +33,7 @@ Route::resource('PurchaseRequest', PurchaseRequest::class);
 
 Auth::routes();
 
-Route::get('dashboard', [Dashboard::class, 'index']);
+Route::get('Dashboard', [Dashboard::class, 'index']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -58,3 +58,5 @@ Route::resource('Vendor', Vendor::class);
 Route::resource('Users', Users::class);
 
 Route::get('delete/{id}', [PurchaseOrder::class,'delete']);
+
+Route::get('delete_prod/{id}', [Produk::class,'delete']);

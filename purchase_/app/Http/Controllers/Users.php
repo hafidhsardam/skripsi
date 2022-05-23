@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class Users extends Controller
@@ -79,6 +80,32 @@ class Users extends Controller
      */
     public function update(Request $request, $id)
     {
+        $hashedPassword = Auth::user()->password;
+ 
+        if (Hash::check($request->old_password, $hashedPassword )) {
+ 
+            if (!Hash::check($request->new_password, $hashedPassword)) {
+ 
+                $users = User::find(Auth::user()->id_user);
+                $users->password = bcrypt($request->new_password);
+                User::where( 'id_user' , Auth::user()->id_user)->update( array( 'password' =>  $users->password));
+    
+                return redirect()->route('Users.index')
+                ->with('success','Password changed');
+            }
+ 
+            else{
+                return redirect()->route('Users.index')
+                ->with('error','Password can\'t change');
+            }
+ 
+           }
+ 
+        else{
+            return redirect()->route('Users.index')
+            ->with('error','Password didn\'t match');
+        }
+
         $user = auth()->user();
         if (Hash::check($request->password, $user->password)) { 
             $data = array(

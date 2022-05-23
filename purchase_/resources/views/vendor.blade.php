@@ -17,7 +17,9 @@
             <p>{{ $message }}</p>
         </div>
         @endif
+        @if(Auth::user()->level=='admin')
         <a href="{{url('Vendor/create')}}" class="btn btn-success">CREATE</a><br><br>
+        @endif
         <table class="table">
             <tr>
                 <th>No</th>
