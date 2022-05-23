@@ -25,6 +25,7 @@ class PurchaseOrder extends Controller
         ->join('produk','produk.id_produk','=','purchase_prods.id_produk')
         ->select('id_po','vendor_name','purchase_reqs.created_at','purchase_orders.status',DB::raw('GROUP_CONCAT(nama_produk) as produk'))
         ->groupBy('id_po','vendor_name','purchase_reqs.created_at','status')
+        ->orderBy('id_po', 'desc')
         ->paginate(5);
         return view('po', compact('po'));
     }
@@ -67,7 +68,7 @@ class PurchaseOrder extends Controller
               ->where('id_purchase', $po->id_purchase)
               ->update(['status' => 'Created PO']);
         $log = new LogHistory();
-        $log->id_data = $request->id_purchase;
+        $log->id_data = $po->id_po;
         $log->status = 'Created Purchase Order';
         $log->id_user = Auth::user()->id_user;
         $log->save();
@@ -121,6 +122,7 @@ class PurchaseOrder extends Controller
             ->join('purchase_prods','purchase_prods.id_purchase', '=', 'purchase_orders.id_purchase')
             ->select('*')
             ->where('id_po', $id)->get();
+
         return view('po_show', compact('po','pos','vendor','produk', 'users'));
     }
     

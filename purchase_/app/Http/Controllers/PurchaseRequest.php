@@ -25,7 +25,7 @@ class PurchaseRequest extends Controller
         ->select('purchase_reqs.id_purchase', DB::raw('GROUP_CONCAT(nama_produk) as produk'),'vendor_name','purchase_reqs.created_at','status')
         ->groupBy('purchase_reqs.id_purchase','vendor_name','purchase_reqs.created_at','status')
         ->where('quotations','n')
-        ->orderBy('id_purchase', 'asc')
+        ->orderBy('purchase_reqs.id_purchase', 'desc')
         ->paginate(5);
         // $pur_req = DB::table('purchase_reqs')
         //     ->join('vendors','vendors.id_vendor', '=', 'purchase_reqs.vendor_id')

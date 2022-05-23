@@ -25,7 +25,8 @@ class RequestQuotation extends Controller
             ->join('purchase_prods','purchase_prods.id_purchase','=','purchase_reqs.id_purchase')
             ->join('produk','produk.id_produk','=','purchase_prods.id_produk')
             ->select('id_quotation','request_quotations.id_purchase',DB::raw('GROUP_CONCAT(nama_produk) as produk'),'vendor_name','purchase_reqs.created_at','request_quotations.status')
-            ->orderBy('purchase_reqs.id_purchase', 'asc')
+            // ->orderBy('purchase_reqs.id_purchase', 'asc')
+            ->orderBy('id_quotation', 'desc')
             ->groupBy('id_quotation','vendor_name','request_quotations.id_purchase','purchase_reqs.created_at','request_quotations.status')
             ->paginate(5);
         return view('qr', compact('pur_req'));

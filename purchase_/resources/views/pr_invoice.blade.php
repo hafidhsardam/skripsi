@@ -13,11 +13,11 @@
     <h3>{{ $title }}</h3>
     <p>Date Printed: {{ $date }}</p>    
     <p>Kode Purchase: {{ $id_purchase }}</p>
+    <p>Nama Vendor: {{ $data_vendor->vendor_name }}</p>
     <table class="table table-bordered">
         <tr>
             <th>Nama Produk</th>
             <th>Kuantitas</th>
-            <th>Vendor</th>
             <th>Deskripsi</th>
             <th>Harga</th>
         </tr>
@@ -27,14 +27,11 @@
         <tr>
             <td>{{ $pr->nama_produk }}</td>
             <td>{{ $pr->qty }}</td>
-            <td>{{ $pr->vendor_name }}</td>
             <td>{{ $pr->deskripsi }}</td>
             <td>{{ $pr->price }}</td>
         </tr>
         @endforeach
-        <tr>
-            <td>Total: {{$total}}</td>
-        </tr>
     </table>
+    Total: {{$total}}
 </body>
 </html>

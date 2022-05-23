@@ -24,13 +24,13 @@
                         <label for="email">Vendor Name</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" name="vendor_name" id="vendor_name" class="form-control">
+                        <input required type="text" name="vendor_name" id="vendor_name" class="form-control">
                     </div>
                     <div class="col-md-2">
                         <label for="phone">Phone</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" name="phone" id="phone" class="form-control">
+                        <input required type="text" name="phone" id="phone" class="form-control">
                     </div>
                 </div><br>
                 <div class="row">
@@ -38,13 +38,13 @@
                         <label for="address">Vendor Address</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" name="vendor_address" id="vendor_address" class="form-control">
+                        <input required type="text" name="vendor_address" id="vendor_address" class="form-control">
                     </div>
                     <div class="col-md-2">
                         <label for="email">Email</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" name="email" id="email" class="form-control">
+                        <input required type="text" name="email" id="email" class="form-control">
                     </div>
                 </div><br>
                 <div class="row">
@@ -52,7 +52,7 @@
                         <label for="type">Type</label>
                     </div>
                     <div class="col-md-3">
-                        <select name="type" id="type" class="form-control">
+                        <select name="type" id="type" class="form-control" required>
                             <option value="best_partner">Best Partner</option>
                             <option value="casual">Casual</option>
                         </select>

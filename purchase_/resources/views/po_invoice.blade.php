@@ -13,13 +13,12 @@
     <h3>{{ $title }}</h3>
     <p>Date Printed: {{ $date }}</p>    
     <p>Kode Purchase: {{ $id_po }}</p>
-    <p>Nama Vendor: {{ $vendor_name }}</p>
+    <p>Nama Vendor: {{ $data_vendor->vendor_name }}</p>
     <table class="table table-bordered">
         <tr>
             <th>Nama Produk</th>
             <th>Kuantitas</th>
             <th>Deskripsi</th>
-            <th>Vendor</th>
             <th>Harga</th>
         </tr>
         <?php $total = 0; ?>
@@ -29,13 +28,10 @@
             <td>{{ $po->nama_produk }}</td>
             <td>{{ $po->qty }}</td>
             <td>{{ $po->deskripsi }}</td>
-            <td>{{ $po->vendor_name }}</td>
             <td>{{ $po->price }}</td>
         </tr>
         @endforeach
-        <tr>
-            <td>Total: {{$total}}</td>
-        </tr>
     </table>
+    Total: {{$total}}
 </body>
 </html>

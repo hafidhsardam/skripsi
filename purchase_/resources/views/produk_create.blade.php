@@ -24,13 +24,13 @@
                     <label for="name">Product Name</label>
                 </div>
                 <div class="col-md-3">
-                    <input type="text" name="nama" id="nama" class="form-control">
+                    <input required type="text" name="nama" id="nama" class="form-control">
                 </div>
                 <div class="col-md-2">
                     <label for="stok">Stok</label>
                 </div>
                 <div class="col-md-3">
-                    <input type="number" name="stok" id="stok" class="form-control">
+                    <input required type="number" name="stok" id="stok" class="form-control">
                 </div>
             </div><br>
             <div class="row">
@@ -38,13 +38,13 @@
                     <label for="harga">Price</label>
                 </div>
                 <div class="col-md-3">
-                    <input type="number" name="price" id="price" class="form-control">
+                    <input required type="number" name="price" id="price" class="form-control">
                 </div>
                 <div class="col-md-2">
                     <label for="type">Type</label>
                 </div>
                 <div class="col-md-3">
-                    <input type="text" name="type" id="type" class="form-control">
+                    <input required type="text" name="type" id="type" class="form-control">
                 </div>
             </div><br>
             

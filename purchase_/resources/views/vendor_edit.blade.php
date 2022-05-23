@@ -24,13 +24,13 @@
                         <label for="email">Vendor Name</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" name="vendor_name" id="vendor_name" class="form-control" value="{{$vendors->vendor_name}}">
+                        <input required type="text" name="vendor_name" id="vendor_name" class="form-control" value="{{$vendors->vendor_name}}">
                     </div>
                     <div class="col-md-2">
                         <label for="phone">Phone</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" name="phone" id="phone" class="form-control" value="{{$vendors->phone}}">
+                        <input required type="text" name="phone" id="phone" class="form-control" value="{{$vendors->phone}}">
                     </div>
                 </div><br>
                 <div class="row">
@@ -38,13 +38,13 @@
                         <label for="address">Vendor Address</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" name="vendor_address" id="vendor_address" class="form-control" value="{{$vendors->address}}">
+                        <input required type="text" name="vendor_address" id="vendor_address" class="form-control" value="{{$vendors->address}}">
                     </div>
                     <div class="col-md-2">
                         <label for="email">Email</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" name="email" id="email" class="form-control" value="{{$vendors->email}}">
+                        <input required type="text" name="email" id="email" class="form-control" value="{{$vendors->email}}">
                     </div>
                 </div><br>
                 <div class="row">
