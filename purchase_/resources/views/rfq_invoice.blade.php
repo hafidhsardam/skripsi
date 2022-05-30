@@ -26,13 +26,13 @@
             <th>Harga</th>
         </tr>
         <?php $total = 0; ?>
-        @foreach($data_rfq as $po)
-        <?php $total += $po->price; ?>
+        @foreach($data_rfq as $rfq)
+        <?php $total += $rfq->price; ?>
         <tr>
-            <td>{{ $po->nama_produk }}</td>
-            <td>{{ $po->qty }}</td>
-            <td>{{ $po->deskripsi }}</td>
-            <td>{{ $po->price }}</td>
+            <td>{{ $rfq->nama_produk }}</td>
+            <td>{{ $rfq->qty }}</td>
+            <td>{{ $rfq->deskripsi }}</td>
+            <td>{{ $rfq->price }}</td>
         </tr>
         @endforeach
     </table>
