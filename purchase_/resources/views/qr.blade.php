@@ -22,9 +22,9 @@
         <table class="table">
             <tr>
                 <th>No</th>
-                <th>Purchase Request</th>
+                <th>Request For Quotation</th>
                 <th>Vendor Name</th>
-                <th>Produk</th>
+                <th>Product</th>
                 <th>Created Date</th>
                 <th>Status</th>
             </tr>

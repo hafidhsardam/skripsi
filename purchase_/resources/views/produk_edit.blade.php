@@ -14,6 +14,8 @@
 <div class="shadow p-3 mb-5 bg-white rounded">
     <form action="{{route('Produk.update', $produk->id_produk)}}" method="post">
     @csrf
+    <a href="#" onclick="history.back()" class="btn btn-success">Back</a>
+
     @method('PUT')
     @if(Auth::user()->level == 'admin')
     <button type="submit" class="btn btn-success">Update</button>            

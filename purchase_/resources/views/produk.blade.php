@@ -23,9 +23,9 @@
         <table class="table">
             <tr>
                 <th>No</th>
-                <th>Produk Name</th>
-                <th>Stok</th>
-                <th>Harga</th>
+                <th>Product Name</th>
+                <th>Stock</th>
+                <th>Price</th>
                 <th>Type</th>
             </tr>
             <?php $no=1 ?>
