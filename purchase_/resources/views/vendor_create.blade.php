@@ -14,6 +14,7 @@
     <div class="shadow p-3 mb-5 bg-white rounded">
         <form action="{{route('Vendor.store')}}" method="post">
         @csrf
+        <a href="#" onclick="history.back()" class="btn btn-success">Back</a>
         @if(Auth::user()->level=='admin')
             <button type="submit" class="btn btn-success">Save</button>            
             <button type="reset" class="btn btn-success">Discard</button>
