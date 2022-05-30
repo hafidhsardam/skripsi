@@ -15,7 +15,7 @@
         <form method="post" action="{{URL::to('received', $po->id_po)}}" id="dynamic_form" enctype="multipart/form-data">
         @csrf
         <!-- @method('PUT') -->        
-        
+        <a href="#" onclick="history.back()" class="btn btn-success">Back</a>
         @if($po->status=='Waiting Approval')
         <a href="{{URL::to('cancel', $po->id_po)}}" class="btn btn-success">Cancel PO</a> 
         <a href="{{URL::to('approved', $po->id_po)}}" class="btn btn-success">Approved</a> 

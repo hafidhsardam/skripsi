@@ -16,8 +16,10 @@
         @csrf
         <!-- @method('PUT') -->
             <!-- <input type="submit" name="save" id="save" class="btn btn-success" value="Save"> -->
+            <a href="#" onclick="history.back()" class="btn btn-success">Back</a>
             <button type="submit" class="btn btn-success">Save</button>
             <button type="reset" class="btn btn-success">Discard</button><br><br>
+            
             <div class="container col-md-9">
                 <div class="form-group">
                     <div class="row">

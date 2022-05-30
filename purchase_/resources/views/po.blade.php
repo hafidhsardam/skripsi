@@ -17,13 +17,14 @@
             <p>{{ $message }}</p>
         </div>
         @endif
-        <a href="{{url('RequestQuotations')}}" class="btn btn-success">CREATE</a><br><br>
+        <!-- <a href="{{url('RequestQuotations')}}" class="btn btn-success">CREATE</a><br><br> -->
+        <br>
         <table class="table">
             <tr>
                 <th>No</th>
                 <th>Purchase Request</th>
                 <th>Vendor Name</th>
-                <th>Produk</th>
+                <th>Product</th>
                 <th>Created Date</th>
                 <th>Status</th>
             </tr>
