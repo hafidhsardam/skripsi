@@ -19,7 +19,7 @@
             <th>Nama Produk</th>
             <th>Kuantitas</th>
             <th>Deskripsi</th>
-            <th>Harga</th>
+        
         </tr>
         <?php $total = 0; ?>
         @foreach($data_purchase as $pr)
@@ -28,10 +28,10 @@
             <td>{{ $pr->nama_produk }}</td>
             <td>{{ $pr->qty }}</td>
             <td>{{ $pr->deskripsi }}</td>
-            <td>{{ $pr->price }}</td>
+          
         </tr>
         @endforeach
     </table>
-    Total: {{$total}}
+  
 </body>
 </html>
