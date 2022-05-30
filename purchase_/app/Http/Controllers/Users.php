@@ -45,7 +45,7 @@ class Users extends Controller
             'level' => 'user'
         ]);
         return redirect()->route('Users.index')
-        ->with('success','New user has been canceled successfully.');
+        ->with('success','New user has been created successfully.');
     }
 
     /**
