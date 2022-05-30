@@ -23,7 +23,7 @@ class Invoice_pdf extends Controller
         ->join('vendors','vendors.id_vendor','=','purchase_reqs.vendor_id')
         ->where('id_po', $id)->first();
         $data = [
-            'title' => 'Purchase Orders Invoice',
+            'title' => 'Purchase Order Invoice',
             'date' => date('m/d/Y'),
             'id_po' => $id,
             'data_po' => $po,
@@ -68,7 +68,7 @@ class Invoice_pdf extends Controller
         ->join('vendors','vendors.id_vendor','=','purchase_reqs.vendor_id')
         ->where('id_purchase', $id)->first();
         $data = [
-            'title' => 'Purchase Request Invoice',
+            'title' => 'Purchase Request',
             'date' => date('m/d/Y'),
             'id_purchase' => $id,
             'data_purchase' => $pr,

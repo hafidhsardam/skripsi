@@ -8,15 +8,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <style type="text/css">
+        .font {
+        font-size: 80%;
+        }
+
+        .label {
+        float: right;
+        width: 200px;
+        padding-right: 24px;
+        }
+     </style>
 </head>
 <body>
     <h3>{{ $title }}</h3>
-    <p>Date Printed: {{ $date }}</p>    
- <p>   <b> {{ $id_quotation }} </b></p>
-    <p>Nama Vendor: {{ $data_vendor->vendor_name }}</p>
-    <p>Alamat: {{ $data_vendor->address }}</p>
-    <p>Nomor Telfon: {{ $data_vendor->phone }}</p>
-    <p>Email: {{ $data_vendor->email }}</p>
+    <p class="label">Date Printed: {{ $date }}</p>    
+    <h4><b> {{ $id_quotation }} </b></h4>
+    <p>Vendor Name: {{ $data_vendor->vendor_name }}</p>
+    <p class="font">Address: {{ $data_vendor->address }}</p>
+    <p class="font">Phone Number: {{ $data_vendor->phone }}</p>
+    <p class="font">Email: {{ $data_vendor->email }}</p>
 
     <table class="table table-bordered">
         <tr>
