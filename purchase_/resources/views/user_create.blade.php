@@ -12,10 +12,11 @@
 
 @if(Auth::user()->level == 'admin')
 @section('content')
+
 <div class="shadow p-3 mb-5 bg-white rounded">
     <form method="POST" action="{{ route('Users.store') }}">
         @csrf
-
+        
         <div class="row mb-3">
             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
@@ -68,9 +69,11 @@
 
         <div class="row mb-0">
             <div class="col-md-6 offset-md-4">
-                <button type="submit" class="btn btn-primary">
+                <button type="submit"  class="btn btn-success">
                     {{ __('Register') }}
                 </button>
+                <a href="#" onclick="history.back()" class="btn btn-success">Back</a>
+
             </div>
         </div>
     </form>

@@ -41,7 +41,7 @@
             </tr>
             @empty
                 <div class="alert alert-danger">
-                    Data Purchase Request belum Tersedia.
+                    User has been empty.
                 </div>
             @endforelse 
         </table>
