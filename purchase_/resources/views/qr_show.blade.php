@@ -30,6 +30,9 @@
                 <div class="col-md-6">
                     <p>Status: {{$qr->status}}</p>
                 </div>
+                <div class="col-md-1">
+                    <a href="{{URL::to('/rfq_invoice', $qr->id_quotation)}}" class="btn btn-success">Print</a>
+                </div>
             </div><br>
             <div class="form-group">
                 <div class="row">

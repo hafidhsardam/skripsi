@@ -29,6 +29,8 @@ Route::get('/invoice_POS/{id}', [Invoice_pdf::class, 'invoice_po']);
 
 Route::get('/invoice_PRS/{id}', [Invoice_pdf::class, 'invoice_pr']);
 
+Route::get('/rfq_invoice/{id}', [Invoice_pdf::class, 'invoice_rfq']);
+
 Route::resource('PurchaseRequest', PurchaseRequest::class);
 
 Auth::routes();

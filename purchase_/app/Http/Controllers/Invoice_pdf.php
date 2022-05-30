@@ -33,6 +33,29 @@ class Invoice_pdf extends Controller
         return $pdf->download('po_invoice.pdf');
     }
 
+    public function invoice_rfq($id)
+    {
+        $qr = DB::table('request_quotations')
+        ->join('purchase_reqs', 'purchase_reqs.id_purchase', '=', 'request_quotations.id_purchase')
+         ->join('purchase_prods', 'purchase_prods.id_purchase','=','purchase_reqs.id_purchase')
+        ->join('produk','produk.id_produk','=','purchase_prods.id_produk') 
+        ->select('purchase_prods.price','purchase_prods.qty','deskripsi','nama_produk')       
+        ->where('id_quotation', $id)->get();
+        $vendor = DB::table('request_quotations')
+        ->join('purchase_reqs', 'purchase_reqs.id_purchase','=','request_quotations.id_purchase')
+        ->join('vendors','vendors.id_vendor','=','purchase_reqs.vendor_id')
+        ->where('id_quotation', $id)->first();
+        $data = [
+            'title' => 'Request For Quotation',
+            'date' => date('m/d/Y'),
+            'id_quoation' => $id,
+            'data_rfq' => $qr,
+            'data_vendor'   => $vendor
+        ];
+        $pdf = PDF::loadView('rfq_invoice', $data);
+        return $pdf->download('rfq_invoice.pdf');
+    }
+
     public function invoice_pr($id)
     {
         $pr = DB::table('purchase_reqs')
