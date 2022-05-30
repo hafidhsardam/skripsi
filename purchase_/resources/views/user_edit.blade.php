@@ -17,6 +17,10 @@
     <form method="POST" action="{{ route('Users.update',$users->id_user) }}">
         @csrf
         @method('PUT')
+        <button type="submit" class="btn btn-success">
+                    {{ __('Update') }}
+                </button>
+                <a href="#" onclick="history.back()" class="btn btn-success">Back</a>
         <a href="{{URL::to('delete_user', $users->id_user)}}" class="btn btn-success">Delete</a>
         <div class="row mb-3">
             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
@@ -84,9 +88,10 @@
 
         <div class="row mb-0">
             <div class="col-md-6 offset-md-4">
-                <button type="submit" class="btn btn-primary">
+                <!-- <button type="submit" class="btn btn-success">
                     {{ __('Update') }}
                 </button>
+                <a href="#" onclick="history.back()" class="btn btn-success">Back</a> -->
             </div>
         </div>
     </form>
