@@ -16,7 +16,7 @@
         i{margin-right:10px}
         h6{margin:0;color:#777}
         h2{margin:0}
-        #accordian{background:#000;width:250px;padding:10px 0 10px 10px;float:left;height:100vh;overflow-x:hidden;position:relative}
+        #accordian{background:#000;width:250px;padding:10px 0 10px 10px;float:left;z-index: 1;height:100vh;overflow-x:hidden;position:fixed}
         .main-navbar{position:relative;padding-top:10px;}
         #accordian li{list-style-type:none}
         #accordian ul li a.accr{color:white;text-decoration:none;font-size:15px;line-height:45px;display:block;padding:0 20px;transition-duration:.6s;transition-timing-function:cubic-bezier(0.68,-.55,.265,1.55);position:relative}
@@ -82,7 +82,8 @@
                 
             </ul>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-2"></div>
+        <div class="container col-md-8">
             <div class="row">
                 <div class="col-md-4"><br>
                     @yield('title_') 

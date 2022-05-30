@@ -15,7 +15,8 @@ class Invoice_pdf extends Controller
         $po = DB::table('purchase_orders')
         ->join('purchase_reqs', 'purchase_reqs.id_purchase','=','purchase_orders.id_purchase')
         ->join('purchase_prods', 'purchase_prods.id_purchase','=','purchase_orders.id_purchase')
-        ->join('produk','produk.id_produk','=','purchase_prods.id_produk')        
+        ->join('produk','produk.id_produk','=','purchase_prods.id_produk') 
+        ->select('purchase_prods.price','purchase_prods.qty','deskripsi','nama_produk')       
         ->where('id_po', $id)->get();
         $vendor = DB::table('purchase_orders')
         ->join('purchase_reqs', 'purchase_reqs.id_purchase','=','purchase_orders.id_purchase')
@@ -38,6 +39,7 @@ class Invoice_pdf extends Controller
         ->join('purchase_prods', 'purchase_prods.id_purchase','=','purchase_reqs.id_purchase')
         ->join('produk','produk.id_produk','=','purchase_prods.id_produk')
         ->join('vendors','vendors.id_vendor','=','purchase_reqs.vendor_id')
+        ->select('purchase_prods.price','purchase_prods.qty','deskripsi','nama_produk')
         ->where('purchase_reqs.id_purchase', $id)->get();
         $vendor = DB::table('purchase_reqs')
         ->join('vendors','vendors.id_vendor','=','purchase_reqs.vendor_id')

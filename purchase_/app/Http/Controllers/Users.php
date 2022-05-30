@@ -122,6 +122,14 @@ class Users extends Controller
          }
     }
 
+    public function delete($id)
+    {
+        $users = User::find($id);
+        $users->delete();
+        return redirect()->route('Users.index')
+            ->with('error','User deleted succesfully');
+    }
+
     /**
      * Remove the specified resource from storage.
      *

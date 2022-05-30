@@ -17,7 +17,8 @@
         @method('PUT')
         @if(Auth::user()->level=='admin')
             <button type="submit" class="btn btn-success">Update</button>            
-            <button type="reset" class="btn btn-success">Discard</button>@endif<br><br>
+            <button type="reset" class="btn btn-success">Discard</button>
+            <a href="{{URL::to('delete_vendor', $vendors->id_vendor)}}" class="btn btn-success">Delete</a>@endif<br><br>
             <div class="form-group container col-md-10">
                 <div class="row">
                     <div class="col-md-2">

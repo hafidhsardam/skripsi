@@ -60,3 +60,7 @@ Route::resource('Users', Users::class);
 Route::get('delete/{id}', [PurchaseOrder::class,'delete']);
 
 Route::get('delete_prod/{id}', [Produk::class,'delete']);
+
+Route::get('delete_vendor/{id}', [Vendor::class,'delete']);
+
+Route::get('delete_user/{id}', [Users::class,'delete']);

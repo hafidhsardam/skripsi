@@ -92,6 +92,14 @@ class Vendor extends Controller
         ->with('success','Vendor has been updated successfully.');
     }
 
+    public function delete($id)
+    {
+        $vendor = Vendor_model::find($id);
+        $vendor->delete();
+        return redirect()->route('Vendor.index')
+        ->with('success','Vendor has been deleted successfully.');
+    }
+
     /**
      * Remove the specified resource from storage.
      *
