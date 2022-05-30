@@ -27,7 +27,7 @@
                 <div class="col-md-6">                    
                     <h2>{{$qr->id_quotation}}</h2>
                 </div>         
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <p>Status: {{$qr->status}}</p>
                 </div>
                 <div class="col-md-1">
