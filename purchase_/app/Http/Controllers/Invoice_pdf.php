@@ -48,7 +48,7 @@ class Invoice_pdf extends Controller
         $data = [
             'title' => 'Request For Quotation',
             'date' => date('m/d/Y'),
-            'id_quoation' => $id,
+            'id_quotation' => $id,
             'data_rfq' => $qr,
             'data_vendor'   => $vendor
         ];

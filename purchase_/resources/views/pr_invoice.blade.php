@@ -12,7 +12,7 @@
 <body>
     <h3>{{ $title }}</h3>
     <p>Date Printed: {{ $date }}</p>    
-    <p>Kode Purchase: {{ $id_purchase }}</p>
+    <p><b>{{ $id_purchase }}</b></p>
     <p>Nama Vendor: {{ $data_vendor->vendor_name }}</p>
     <table class="table table-bordered">
         <tr>

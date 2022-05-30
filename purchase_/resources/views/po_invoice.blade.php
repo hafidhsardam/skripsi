@@ -12,7 +12,7 @@
 <body>
     <h3>{{ $title }}</h3>
     <p>Date Printed: {{ $date }}</p>    
-    <p>Kode Purchase: {{ $id_po }}</p>
+    <p><b>{{ $id_po }}</b></p>
     <p>Nama Vendor: {{ $data_vendor->vendor_name }}</p>
     <p>Alamat: {{ $data_vendor->address }}</p>
     <p>Nomor Telfon: {{ $data_vendor->phone }}</p>
