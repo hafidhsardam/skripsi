@@ -29,14 +29,22 @@
             </tr>
             <?php $no=1 ?>
             @forelse ($pur_req as $vendors)            
-            <tr>                
-                <td><a href="{{route('PurchaseRequest.show', $vendors->id_purchase)}}">{{ $no++ }}</a></td>
+
+
+ 
+            <tr  class="border px-4 py-2" onclick="window.location=' {{route('PurchaseRequest.show', $vendors->id_purchase)}}' " style="cursor: pointer;">               
+               
+              
+
+                <td>{{ $no++ }}</td>
                 <td>{{ $vendors->id_purchase }}</td>
                 <td>{{ $vendors->vendor_name }}</td>
                 <td>{{ $vendors->produk }}</td>
                 <td>{{ $vendors->created_at }}</td>
-                <td>{{ $vendors->status }}</td>                
+                <td>{{ $vendors->status }}</td>    
+                  
             </tr>
+      
             @empty
                 <div class="alert alert-danger">
                     Data Purchase Request belum Tersedia.
