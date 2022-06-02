@@ -31,9 +31,9 @@ class Dashboard extends Controller
             {
                 foreach ($purchase as $key => $purchase) {
                     $output.='<div class="col-md-3 card" style="margin:10px;" id="card">'.
-                    '<h5 class="card-title">Kode Purchase: '.$purchase->id_purchase.'</h5>'.                    
-                    '<h5 class="card-title">Kode PO: '.$purchase->id_po.'</h5>'.                    
-                    '<h5 class="card-title">Kode RFQ: '.$purchase->id_quotation.'</h5>'.                    
+                    '<h5 class="card-title">Kode Purchase Request: '.$purchase->id_purchase.'</h5>'.        
+                    '<h5 class="card-title">Kode RFQ: '.$purchase->id_quotation.'</h5>'.             
+                    '<h5 class="card-title">Kode PO: '.$purchase->id_po.'</h5>'.                                       
                     '<p class="card-text">Status: '.$purchase->status.'</p>'.
                     '<p class="card-text">Notes: '.$purchase->notes.'</p>'.
                     '<p class="card-text">Order Date: '.$purchase->order_date.'</p>'.
