@@ -75,7 +75,7 @@
                 <li>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <button type="submit" class=" btn logout"><i class="fa fa-heart"></i>Logout</button>
+                        <button type="submit" class=" btn logout">Logout</button>
                     </form>
                     <p style="color: white;">&copy 2022 Purchase ERP</p>
                 </li>
@@ -96,12 +96,12 @@
                             <!-- </form> -->
                         </div>
                         <div class="col-md-2"></div>
-                        <div class="col-md-1">
+                        <!-- <div class="col-md-1">
                             <a href=""><i class="fa fa-lg fa-solid fa-envelope"></i></a>
                         </div>
                         <div class="col-md-1">
                             <a href=""><i class="fa fa-lg fa-solid fa-bell"></i></a>
-                        </div>
+                        </div> -->
                         <div class="col-md-1">
                             <div class="row">
                                 <div class="col-md-1">
