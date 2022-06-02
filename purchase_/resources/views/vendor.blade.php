@@ -29,9 +29,11 @@
                 <th>Email</th>
             </tr>
             <?php $no=1 ?>
-            @forelse ($vendor as $vendors)            
-            <tr>                
-                <td><a href="{{route('Vendor.edit', $vendors->id_vendor)}}">{{ $no++ }}</a></td>
+            @forelse ($vendor as $vendors)  
+            
+            <tr  class="border px-4 py-2" onclick="window.location='{{route('Vendor.edit', $vendors->id_vendor)}}' " style="cursor: pointer;">               
+         
+                <td>{{ $no++ }}</td>
                 <td>{{ $vendors->vendor_name }}</td>
                 <td>{{ $vendors->address }}</td>
                 <td>{{ $vendors->phone }}</td>

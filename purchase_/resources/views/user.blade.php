@@ -32,9 +32,11 @@
                 <th>Level</th>
             </tr>
             <?php $no=1 ?>
-            @forelse ($users as $vendors)            
-            <tr>                
-                <td><a href="{{route('Users.edit', $vendors->id_user)}}">{{ $no++ }}</a></td>
+            @forelse ($users as $vendors)    
+
+            <tr  class="border px-4 py-2" onclick="window.location=' {{route('Users.edit', $vendors->id_user)}}' " style="cursor: pointer;">               
+
+                <td>{{ $no++ }}</td>
                 <td>{{ $vendors->name }}</td>
                 <td>{{ $vendors->email }}</td>
                 <td>{{ $vendors->level }}</td>                

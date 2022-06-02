@@ -30,8 +30,10 @@
             </tr>
             <?php $no=1 ?>
             @forelse ($pur_req as $vendors)            
-            <tr>                
-                <td><a href="{{route('RequestQuotations.show', $vendors->id_quotation)}}">{{ $no++ }}</a></td>
+
+            <tr  class="border px-4 py-2" onclick="window.location=' {{route('RequestQuotations.show', $vendors->id_quotation)}}' " style="cursor: pointer;">               
+                      
+                <td>{{ $no++ }}</td>
                 <td>{{ $vendors->id_quotation }}</td>
                 <td>{{ $vendors->vendor_name }}</td>
                 <td>{{ $vendors->produk }}</td>

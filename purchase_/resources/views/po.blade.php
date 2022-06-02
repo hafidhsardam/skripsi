@@ -29,9 +29,11 @@
                 <th>Status</th>
             </tr>
             <?php $no=1 ?>
-            @forelse ($po as $vendors)            
-            <tr>                
-                <td><a href="{{route('PurchaseOrder.show',$vendors->id_po)}}">{{ $no++ }}</a></td>
+            @forelse ($po as $vendors)           
+            
+            <tr  class="border px-4 py-2" onclick="window.location=' {{route('PurchaseOrder.show',$vendors->id_po)}}' " style="cursor: pointer;">               
+       
+                <td>{{ $no++ }}</td>
                 <td>{{ $vendors->id_po }}</td>
                 <td>{{ $vendors->vendor_name }}</td>
                 <td>{{ $vendors->produk }}</td>

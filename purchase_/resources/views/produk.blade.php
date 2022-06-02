@@ -29,9 +29,11 @@
                 <th>Type</th>
             </tr>
             <?php $no=1 ?>
-            @forelse ($product as $produks)            
-            <tr>                
-                <td><a href="{{route('Produk.edit', $produks->id_produk)}}">{{ $no++ }}</a></td>
+            @forelse ($product as $produks)        
+            
+            <tr  class="border px-4 py-2" onclick="window.location=' {{route('Produk.edit', $produks->id_produk)}}' " style="cursor: pointer;">               
+             
+                <td>{{ $no++ }}</td>
                 <td>{{ $produks->nama_produk }}</td>
                 <td>{{ $produks->stok }}</td>
                 <td>{{ $produks->price }}</td>
