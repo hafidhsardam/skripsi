@@ -34,7 +34,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="create_date">Create Date</label>
-                            <input class="form-control"type="date" name="create_date" required id="create_date" value="{{ date('Y-m-d')}}">
+                            <input  class="form-control"type="date" name="create_date" required id="create_date" value="{{ date('Y-m-d')}}">
                         </div>
                     </div>
                 </div>
@@ -42,11 +42,11 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label for="notes">Notes</label>
-                            <textarea name="notes" class="form-control" id="notes" cols="5" rows="5"></textarea>
+                            <textarea name="notes" class="form-control" id="notes" cols="5" rows="5" required ></textarea>
                         </div>
                         <div class="col-md-6">
                             <label for="order_date">Order Date</label>
-                            <input class="form-control"type="date" name="order_date" required id="order_date">
+                            <input  class="form-control" type="date" name="order_date" required id="order_date">
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
             '@foreach ($produk as $produks)<option value="{{$produks->id_produk}}">{{$produks->nama_produk}}</option>@endforeach</select></td>';            
             html += '<td><input type="text" name="description[]" class="form-control" required /></td>';
             html += '<td><input type="text" name="unit[]" class="form-control" required /></td>';
-            html += '<td><input type="number" name="qty[]" class="form-control" required /></td>';
+            html += '<td><input type="number" name="qty[]" class="form-control" required min="1" /></td>';
             if(number > 1)
             {
                 html += '<td><button type="button" name="remove" id="" class="btn btn-danger remove">Remove</button></td></tr>';
