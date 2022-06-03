@@ -200,7 +200,7 @@ class PurchaseOrder extends Controller
 
     public function delete($id)
     {
-        $po = PO_Controller::find('PO0002');
+        $po = PO_Controller::find($id);
         $po->delete();
         return redirect()->route('PurchaseOrder.index')
         ->with('success','Purchase order has been deleted successfully.');
