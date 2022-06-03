@@ -43,10 +43,10 @@
             <td>{{ $rfq->nama_produk }}</td>
             <td>{{ $rfq->qty }}</td>
             <td>{{ $rfq->deskripsi }}</td>
-            <td>{{ $rfq->price }}</td>
+            <td>Rp. {{ $rfq->price }}</td>
         </tr>
         @endforeach
     </table>
-    Total: {{$total}}
+    Total: Rp {{$total}}
 </body>
 </html>

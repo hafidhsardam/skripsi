@@ -101,8 +101,8 @@
                         Data Purchase Request belum Tersedia.
                     </div>
                 @endforelse
-                    <tr>
-                        <td>Total: {{$total}}</td>
+                    <tr >
+                        <td colspan="3">Total: Rp. {{$total}}</td>
                     </tr>
             </tbody>
         </table>

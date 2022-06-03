@@ -125,7 +125,7 @@
                     </div>
                     @endforelse
                     <tr>
-                        <td>Total: {{$total}}</td>
+                        <td colspan="3">Total: Rp. {{$total}}</td>
                     </tr>
                 </tbody>
             </table>
