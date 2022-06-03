@@ -57,7 +57,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label for="notes">Notes</label>
-                        <input readonly value="{{$qr->notes}}" class="form-control"type="text" name="notes" id="notes">
+                        <textarea readonly value = "true" class="form-control"type="text" name="notes" id="notes" cols="5" rows="5">  {{$qr->notes}}</textarea>
                     </div>
                     <div class="col-md-6">
                         <label for="order_date">Order Date</label>

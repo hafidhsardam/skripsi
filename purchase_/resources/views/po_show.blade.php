@@ -64,7 +64,10 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label for="notes">Notes</label>
-                            <input readonly value="{{$po->notes}}" class="form-control"type="text" name="notes" id="notes">
+
+                            <textarea readonly value = "true" class="form-control"type="text" name="notes" id="notes" cols="5" rows="5"> {{$po->notes}}</textarea>
+
+                           
                         </div>
                         <div class="col-md-6">
                             <label for="order_date">Order Date</label>
