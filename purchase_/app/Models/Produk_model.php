@@ -20,7 +20,7 @@ class Produk_model extends Model
 
     public static function get_newid($auto_id,$prefix){
         $newId = substr($auto_id, 1,4);
-        $tambah = (int)$newId + 1;
+        $tambah = (int)$newId +1;
         if (strlen($tambah) == 1){
             $id_produk = $prefix."000" .$tambah;
         }
