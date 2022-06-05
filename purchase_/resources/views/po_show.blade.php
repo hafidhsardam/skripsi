@@ -89,6 +89,15 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="notes">Source Document</label>
+                            <input readonly value = "{{$po->id_purchase}}" class="form-control"type="text" name="notes" id="notes" >  
+                        </div>
+                       
+                    </div>
+                </div>
             </div><br><br>
             <table class="table table-striped table-dark">
                 <thead>
