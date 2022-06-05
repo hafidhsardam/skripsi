@@ -20,7 +20,7 @@
         @if(Auth::user()->level=='admin')
         <a href="{{url('Produk/create')}}" class="btn btn-success">CREATE</a>
         @endif<br><br>
-        <table class="table">
+        <table class="table table-striped table-hover">
             <tr>
                 <th>No</th>
                 <th>Product Name</th>

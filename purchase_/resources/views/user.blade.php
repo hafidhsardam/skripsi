@@ -24,7 +24,7 @@
         </div>
         @endif
         <a href="{{url('Users/create')}}" class="btn btn-success">CREATE</a><br><br>
-        <table class="table">
+        <table class="table table-striped table-hover">
             <tr>
                 <th>No</th>
                 <th>User Name</th>
