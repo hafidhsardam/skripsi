@@ -40,7 +40,8 @@
                         <label for="address">Vendor Address</label>
                     </div>
                     <div class="col-md-3">
-                        <input required type="text" name="vendor_address" id="vendor_address" class="form-control" value="{{$vendors->address}}">
+              
+                        <textarea required type="text" name="vendor_address" id="vendor_address" class="form-control" cols="5" rows="5">{{$vendors->address}}</textarea>
                     </div>
                     <div class="col-md-2">
                         <label for="email">Email</label>
