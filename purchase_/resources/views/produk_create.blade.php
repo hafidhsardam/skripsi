@@ -7,7 +7,7 @@
 @endsection
  
 @section('title_')
-<h5 id="form">Produk</h5><br>
+<h5 id="form">Product</h5><br>
 @endsection
 
 @section('content')
@@ -29,7 +29,7 @@
                     <input required type="text" name="nama" id="nama" class="form-control">
                 </div>
                 <div class="col-md-2">
-                    <label for="stok">Stok</label>
+                    <label for="stok">Stock</label>
                 </div>
                 <div class="col-md-3">
                     <input required type="number" name="stok" id="stok" class="form-control">
