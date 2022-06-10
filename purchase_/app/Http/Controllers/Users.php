@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SentEmail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class Users extends Controller
 {
@@ -128,6 +130,13 @@ class Users extends Controller
         $users->delete();
         return redirect()->route('Users.index')
             ->with('error','User deleted succesfully');
+    }
+
+    public function sentemail($email)
+    {
+        Mail::to($email)->send(new SentEmail());
+ 
+		return redirect()->back();
     }
 
     /**

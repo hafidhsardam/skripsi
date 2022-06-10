@@ -66,3 +66,5 @@ Route::get('delete_prod/{id}', [Produk::class,'delete']);
 Route::get('delete_vendor/{id}', [Vendor::class,'delete']);
 
 Route::get('delete_user/{id}', [Users::class,'delete']);
+
+Route::get('SentEmail/{email}', [Users::class,'sentemail']);

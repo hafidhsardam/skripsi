@@ -1,16 +1,16 @@
 @extends('template')
  
-@section('title_Product', 'active')
+@section('titleProduct', 'active')
  
 @section('sidebar')
     @parent
 @endsection
  
-@section('title_')
+@section('title')
 <h5 id="form">Product</h5><br>
 @endsection
 
-@section('content')    
+@section('content')
     <div class="shadow p-3 mb-5 bg-white rounded">
         @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -29,19 +29,19 @@
                 <th>Type</th>
             </tr>
             <?php $no=1 ?>
-            @forelse ($product as $produks)        
-            
-            <tr  class="border px-4 py-2" onclick="window.location=' {{route('Produk.edit', $produks->id_produk)}}' " style="cursor: pointer;">               
-             
+            @forelse ($product as $produks)
+
+            <tr  class="border px-4 py-2" onclick="window.location=' {{route('Produk.edit', $produks->id_produk)}}' " style="cursor: pointer;">
+
                 <td>{{ $no++ }}</td>
                 <td>{{ $produks->nama_produk }}</td>
                 <td>{{ $produks->stok }}</td>
                 <td>{{ $produks->price }}</td>
-                <td>{{ $produks->type }}</td>                
+                <td>{{ $produks->type }}</td>
             </tr>
             @empty
                 <div class="alert alert-danger">
-                    Data produk belum Tersedia.
+                    Product has not been created
                 </div>
             @endforelse 
         </table>

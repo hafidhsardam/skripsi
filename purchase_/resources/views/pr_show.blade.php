@@ -35,6 +35,9 @@
                 <div class="col-md-1">
                     <a href="{{URL::to('/invoice_PRS', $pur_req->id_purchase)}}" class="btn btn-success">Print</a>
                 </div>
+                <div class="col-md-1">
+                    <a href="{{URL::to('/SentEmail/hafidh.sardam@gmail.com')}}" class="btn btn-success">Sent Email</a>
+                </div>
             </div><br>
             <div class="form-group">
                 <div class="row">
