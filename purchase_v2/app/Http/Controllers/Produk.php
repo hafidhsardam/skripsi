@@ -49,7 +49,6 @@ class Produk extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
         $produk = new Produk_model();
         $produk->id_produk = $this->getIdPurchase();
         $produk->nama_produk = $request->nama;

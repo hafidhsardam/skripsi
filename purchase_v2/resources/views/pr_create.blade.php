@@ -26,9 +26,10 @@
                         <div class="col-md-6">
                             <label for="vendor">Vendor</label>
                             <select class="form-control" name="vendor_id" id="vendor" required>
-                            @foreach ($vendor as $vendors)
+                            @forelse ($vendor as $vendors)
                                 <option value="{{$vendors->id_vendor}}">{{$vendors->vendor_name}}</option>
-                            @endforeach
+                            @empty
+                            @endforelse
                             </select>
 
                         </div>
