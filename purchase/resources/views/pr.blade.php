@@ -20,7 +20,7 @@
         <a href="{{url('PurchaseRequest/create')}}" class="btn btn-success">CREATE</a><br><br>
         <form action="" method="get" class="row mb-4 ml-1">
             <?php $id_purchase = [] ?>
-            <select name="id_purchase" class="form-control col-sm-2 mr-2">
+            <select name="id_purchase" class="form-control col-sm-3 mr-2">
                 <option value="">Filter PO</option>
                 @foreach ($pur_req as $vendors)
                     @if($vendors->status != "Deleted" && !in_array($vendors->id_purchase, $id_purchase))

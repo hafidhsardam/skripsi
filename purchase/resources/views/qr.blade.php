@@ -21,7 +21,7 @@
         <br>
         <form action="" method="get" class="row mb-4 ml-1">
             <?php $id_quotation = [] ?>
-            <select name="id_quotation" class="form-control col-sm-2 mr-2">
+            <select name="id_quotation" class="form-control col-sm-3 mr-2">
                 <option value="">Filter Request For Quotation</option>
                 @foreach ($pur_req as $vendors)
                     @if($vendors->status != "Deleted" && !in_array($vendors->id_quotation, $id_quotation))

@@ -24,6 +24,23 @@
         </div>
         @endif
         <a href="{{url('Users/create')}}" class="btn btn-success">CREATE</a><br><br>
+
+        <form action="" method="get" class="row mb-4 ml-1">
+            <?php $name = [] ?>
+            <select name="name" class="form-control col-sm-2 mr-2">
+                <option value="">Filter User Name </option>
+                @foreach ($users as $vendors)
+                    @if(!in_array($vendors->name, $name))
+                    <?php if(!in_array($vendors->name, $name)) array_push($name, $vendors->name) ?>
+                    <option <?= $_GET && $_GET['name'] == $vendors->name ? "selected" : "" ?> value="{{ $vendors->name }}">{{ $vendors->name }}</option>
+
+                    @endif
+                @endforeach 
+            </select>
+            <button type="submit" class="btn btn-info">Filter</button>
+            <a href="/Users" class="btn btn-dark ml-2">Reset</a>
+        </form>
+        
         <table class="table table-striped table-hover">
             <tr>
                 <th>No</th>
@@ -34,6 +51,12 @@
             <?php $no=1 ?>
             @forelse ($users as $vendors)    
 
+            <?php 
+                $name = ($_GET && $_GET['name'] != "") ? ($_GET && $_GET['name'] == $vendors->name ? true : false) : true;
+            ?>
+
+            @if($name)
+
             <tr  class="border px-4 py-2" onclick="window.location=' {{route('Users.edit', $vendors->id_user)}}' " style="cursor: pointer;">               
 
                 <td>{{ $no++ }}</td>
@@ -41,6 +64,7 @@
                 <td>{{ $vendors->email }}</td>
                 <td>{{ $vendors->level }}</td>                
             </tr>
+            @endif
             @empty
                 <div class="alert alert-danger">
                     User has been empty.

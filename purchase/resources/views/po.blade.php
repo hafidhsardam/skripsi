@@ -21,7 +21,7 @@
         <br>
         <form action="" method="get" class="row mb-4 ml-1">
             <?php $id_po = [] ?>
-            <select name="id_po" class="form-control col-sm-2 mr-2">
+            <select name="id_po" class="form-control col-sm-3 mr-2">
                 <option value="">Filter PO</option>
                 @foreach ($po as $vendors)
                     @if($vendors->status != "Deleted" && !in_array($vendors->id_po, $id_po))
@@ -77,14 +77,14 @@
                 <th>Status</th>
             </tr>
             <?php $no=1 ?>
-            @forelse ($po as $vendors)           
+            @forelse ($po as $vendors)
 
             <?php 
                 $id_po = ($_GET && $_GET['id_po'] != "") ? ($_GET && $_GET['id_po'] == $vendors->id_po ? true : false) : true;
                 $vendor_name = ($_GET && $_GET['vendor_name'] != "") ? ($_GET && $_GET['vendor_name'] == $vendors->vendor_name ? true : false) : true;
                 $produk = ($_GET && $_GET['produk'] != "") ? ($_GET && $_GET['produk'] == $vendors->produk ? true : false) : true;
                 $status = ($_GET && $_GET['status'] != "") ? ($_GET && $_GET['status'] == $vendors->status ? true : false) : true;
-            ?>     
+            ?>
                   
             @if($vendors->status != "Deleted" && $id_po && $vendor_name && $produk && $status)
             

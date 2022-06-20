@@ -20,6 +20,23 @@
         @if(Auth::user()->level=='admin')
         <a href="{{url('Vendor/create')}}" class="btn btn-success">CREATE</a><br><br>
         @endif
+
+        <form action="" method="get" class="row mb-4 ml-1">
+            <?php $vendor_name = [] ?>
+            <select name="vendor_name" class="form-control col-sm-2 mr-2">
+                <option value="">Filter Vendor Name </option>
+                @foreach ($vendor as $vendors)
+                    @if(!in_array($vendors->vendor_name, $vendor_name))
+                    <?php if(!in_array($vendors->vendor_name, $vendor_name)) array_push($vendor_name, $vendors->vendor_name) ?>
+                    <option <?= $_GET && $_GET['vendor_name'] == $vendors->vendor_name ? "selected" : "" ?> value="{{ $vendors->vendor_name }}">{{ $vendors->vendor_name }}</option>
+
+                    @endif
+                @endforeach 
+            </select>
+            <button type="submit" class="btn btn-info">Filter</button>
+            <a href="/Vendor" class="btn btn-dark ml-2">Reset</a>
+        </form>
+
         <table class="table table-striped table-hover">
             <tr>
                 <th>No</th>
@@ -30,6 +47,12 @@
             </tr>
             <?php $no=1 ?>
             @forelse ($vendor as $vendors)  
+
+            <?php 
+                $vendor_name = ($_GET && $_GET['vendor_name'] != "") ? ($_GET && $_GET['vendor_name'] == $vendors->vendor_name ? true : false) : true;
+            ?>
+
+            @if($vendor_name)
             
             <tr  class="border px-4 py-2" onclick="window.location='{{route('Vendor.edit', $vendors->id_vendor)}}' " style="cursor: pointer;">               
          
@@ -39,6 +62,7 @@
                 <td>{{ $vendors->phone }}</td>
                 <td>{{ $vendors->email }}</td>                
             </tr>
+            @endif
             @empty
                 <div class="alert alert-danger">
                     Data Vendor belum Tersedia.
