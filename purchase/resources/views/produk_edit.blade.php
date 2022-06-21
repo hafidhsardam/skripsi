@@ -51,6 +51,7 @@
                     <input required value="{{$produk->type}}" type="text" name="type" id="type" class="form-control">
                 </div>
             </div><br>
+           
             
         </div>
     </form>
