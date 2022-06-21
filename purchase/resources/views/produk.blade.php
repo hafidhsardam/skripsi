@@ -52,7 +52,6 @@
             <?php 
                 $nama_produk = ($_GET && $_GET['nama_produk'] != "") ? ($_GET && $_GET['nama_produk'] == $produks->nama_produk ? true : false) : true;
                 $vendor_name = ($_GET && $_GET['vendor_name'] != "") ? ($_GET && $_GET['vendor_name'] == $vendors->vendor_name ? true : false) : true;
-
           ?>
 
             @if($nama_produk)
@@ -61,7 +60,7 @@
 
                 <td>{{ $no++ }}</td>
                 <td>{{ $produks->nama_produk }}</td>
-                <td>{{ $produks->vendor_name }}</td>
+                <td>{{ $produks->showVendor->vendor_name }}</td>
                 <td>{{ $produks->stok }}</td>
                 <td>{{ $produks->price }}</td>
                 <td>{{ $produks->type }}</td>
