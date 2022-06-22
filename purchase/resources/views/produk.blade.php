@@ -23,7 +23,7 @@
         
         <form action="" method="get" class="row mb-4 ml-1">
             <?php $nama_produk = [] ?>
-            <select name="nama_produk" class="form-control col-sm-2 mr-2">
+            <select name="nama_produk" class="form-control col-sm-10 mr-2">
                 <option value="">Filter Product Name </option>
                 @foreach ($product as $vendors)
                     @if(!in_array($vendors->nama_produk, $nama_produk))
@@ -33,8 +33,8 @@
                     @endif
                 @endforeach 
             </select>
-            <button type="submit" class="btn btn-info">Filter</button>
-            <a href="/Produk" class="btn btn-dark ml-2">Reset</a>
+            <button type="submit" class="btn btn-success mr-2">Filter</button>
+            <a href="/Produk" class="btn btn-success">Reset</a>
         </form>
 
         <table class="table table-striped table-hover">

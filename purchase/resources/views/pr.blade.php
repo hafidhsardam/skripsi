@@ -31,7 +31,7 @@
                 @endforeach 
             </select>
             <?php $vendor_name = [] ?>
-            <select name="vendor_name" class="form-control col-sm-2 mr-2">
+            <select name="vendor_name" class="form-control col-sm-3 mr-2">
                 <option value="">Filter Vendor </option>
                 @foreach ($pur_req as $vendors)
                     @if($vendors->status != "Deleted" && !in_array($vendors->vendor_name, $vendor_name))
@@ -63,8 +63,8 @@
                     @endif
                 @endforeach 
             </select>
-            <button type="submit" class="btn btn-info">Filter</button>
-            <a href="/PurchaseRequest" class="btn btn-dark ml-2">Reset</a>
+            <button type="submit" class="btn btn-success mr-1">Filter</button> 
+            <a href="/PurchaseRequest" class="btn btn-success">Reset</a>
         </form>
         <table class="table table-striped table-hover">
             <tr>

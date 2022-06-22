@@ -27,7 +27,7 @@
 
         <form action="" method="get" class="row mb-4 ml-1">
             <?php $name = [] ?>
-            <select name="name" class="form-control col-sm-2 mr-2">
+            <select name="name" class="form-control col-sm-10 mr-2">
                 <option value="">Filter User Name </option>
                 @foreach ($users as $vendors)
                     @if(!in_array($vendors->name, $name))
@@ -37,8 +37,8 @@
                     @endif
                 @endforeach 
             </select>
-            <button type="submit" class="btn btn-info">Filter</button>
-            <a href="/Users" class="btn btn-dark ml-2">Reset</a>
+            <button type="submit" class="btn btn-success mr-2">Filter</button>
+            <a href="/Users" class="btn btn-success">Reset</a>
         </form>
         
         <table class="table table-striped table-hover">
