@@ -51,7 +51,7 @@
             <ul class="show-dropdown main-navbar text-left">
                 <div class="selector-active"><div class="top"></div><div class="bottom"></div></div>
                 
-                <img class="logosidebar" src="purchash.png"/><br><br>                
+                <h2 style="color: white; font-weight:550;margin: 20px;">PURCHASE</h2><br><br>                    
                 <li class="@yield('title_Dashboard')">
                     <a class="accr" href="{{ url('Dashboard') }}"><i class="fa fa-tachometer"></i>Dashboard</a>
                 </li>
