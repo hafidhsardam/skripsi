@@ -80,9 +80,9 @@ class Produk extends Controller
      */
     public function edit($id)
     {
-        $produk = Produk_model::find($id); 
-        $vendor = DB::table('vendors')->get();       
-        return view('produk_edit', compact('produk', 'vendor'));
+        $vendor = DB::table("vendors")->get();
+        $produk = Produk_model::find($id);        
+        return view('produk_edit', compact('produk','vendor'));
     }
 
     /**
@@ -99,7 +99,7 @@ class Produk extends Controller
         $produk->stok = $request->stok;
         $produk->price = $request->price;
         $produk->type = $request->type;
-        $produk->vendor_id = $request->vendor_id;
+        $produk->id_vendor = $request->id_vendor;
         $produk->save();
         return redirect()->route('Produk.index')
         ->with('success','Product has been updated successfully.');

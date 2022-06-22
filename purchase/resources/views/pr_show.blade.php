@@ -49,10 +49,8 @@
                     <div class="col-md-6">
                         <label for="vendor">Vendor</label>
                         <select readonly class="form-control" name="vendor_id" id="vendor">
-                            @foreach ($vendor as $vendors)
-                            <option value="{{$vendors->id_vendor}}"
-                                @if($vendors->id_vendor==$vendors->id_vendor) selected @endif >
-                                {{$vendors->vendor_name}}</option>
+                        @foreach ($vendor as $vendors)
+                            <option value="{{$vendors->id_vendor}}">{{$vendors->vendor_name}}</option>
                         @endforeach
                         </select>
 

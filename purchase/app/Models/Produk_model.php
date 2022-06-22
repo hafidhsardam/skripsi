@@ -35,7 +35,4 @@ class Produk_model extends Model
         }
         return $id_produk;
     }
-    public function showVendor(){
-        return $this->belongsTo('App\Models\Vendor_model', 'id_vendor', 'id_vendor');
-    }
 }

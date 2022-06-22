@@ -54,10 +54,8 @@
                 <div class="col-md-3 mt-4 mb-2">
                     <select name="id_vendor" required class="form-control">
                         <option value="">Pilih Vendor</option>
-                        @foreach ($vendor as $vendors)
-                            <option value="{{$vendors->id_vendor}}"
-                                @if($vendors->id_vendor==$vendors->id_vendor) selected @endif >
-                                {{$vendors->vendor_name}}</option>
+                        @foreach($vendor as $value)
+                        <option value="{{$value->id_vendor}}">{{$value->vendor_name}}</option>
                         @endforeach
                     </select>
                 </div>
