@@ -32,7 +32,10 @@
         .selector-active .bottom:before{bottom:-25px;left:-25px}
         #form{margin:10px;}
         .btn-success{background-color: #000;}
-        .logout{background-color: #fff;color: #000;margin: 20px;}
+        .logout{background-color: #fff;color: #000;margin: 20px;margin-left:60px}
+        .rights{
+            padding-left: 20px;
+        }
     </style>
     @show
 </head>
@@ -77,7 +80,7 @@
                         @csrf
                         <button type="submit" class=" btn logout">Logout</button>
                     </form>
-                    <p style="color: white;">&copy 2022 Purchase ERP</p>
+                    <p class="rights" style="color: white;">&copy 2022 Purchase ERP</p>
                 </li>
                 
             </ul>
