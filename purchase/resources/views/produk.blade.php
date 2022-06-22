@@ -1,12 +1,12 @@
 @extends('template')
  
-@section('titleProduct', 'active')
+@section('title_Product', 'active')
  
 @section('sidebar')
     @parent
 @endsection
  
-@section('title')
+@section('title_')
 <h5 id="form">Product</h5><br>
 @endsection
 
@@ -52,6 +52,7 @@
             <?php 
                 $nama_produk = ($_GET && $_GET['nama_produk'] != "") ? ($_GET && $_GET['nama_produk'] == $produks->nama_produk ? true : false) : true;
                 $vendor_name = ($_GET && $_GET['vendor_name'] != "") ? ($_GET && $_GET['vendor_name'] == $vendors->vendor_name ? true : false) : true;
+
             ?>
             
 

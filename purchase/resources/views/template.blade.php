@@ -32,7 +32,15 @@
         .selector-active .bottom:before{bottom:-25px;left:-25px}
         #form{margin:10px;}
         .btn-success{background-color: #000;}
-        .logout{background-color: #fff;color: #000;margin: 20px;}
+        .logout{background-color: #fff;color: #000;margin: 20px;margin-left:60px}
+        .logosidebar{
+            width: 100%;
+            height: 75px;
+            padding-right: 30px;
+        }
+        .rights{
+            padding-left: 20px;
+        }
     </style>
     @show
 </head>
@@ -43,7 +51,7 @@
             <ul class="show-dropdown main-navbar text-left">
                 <div class="selector-active"><div class="top"></div><div class="bottom"></div></div>
                 
-                <h2 style="color: white; font-weight:550;margin: 20px;">PURCHASE</h2><br><br>                
+                <img class="logosidebar" src="purchash.png"/><br><br>                
                 <li class="@yield('title_Dashboard')">
                     <a class="accr" href="{{ url('Dashboard') }}"><i class="fa fa-tachometer"></i>Dashboard</a>
                 </li>
@@ -77,7 +85,7 @@
                         @csrf
                         <button type="submit" class=" btn logout">Logout</button>
                     </form>
-                    <p style="color: white;">&copy 2022 Purchase ERP</p>
+                    <p class="rights" style="color: white;">&copy 2022 Purchase ERP</p>
                 </li>
                 
             </ul>
