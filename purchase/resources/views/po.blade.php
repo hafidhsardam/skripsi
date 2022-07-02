@@ -26,7 +26,7 @@
                 @foreach ($po as $vendors)
                     @if($vendors->status != "Deleted" && !in_array($vendors->id_po, $id_po))
                     <?php if(!in_array($vendors->id_po, $id_po)) array_push($id_po, $vendors->id_po) ?>
-                    <option <?= $_GET && $_GET['id_po'] == $vendors->id_po ? "selected" : "" ?> value="{{ $vendors->id_po }}">{{ $vendors->id_po }}</option>
+                    <option <?= isset($_GET['id_po'])&& $_GET['id_po'] == $vendors->id_po ? "selected" : "" ?> value="{{ $vendors->id_po }}">{{ $vendors->id_po }}</option>
 
                     @endif
                 @endforeach 
@@ -37,7 +37,7 @@
                 @foreach ($po as $vendors)
                     @if($vendors->status != "Deleted" && !in_array($vendors->vendor_name, $vendor_name))
                     <?php if(!in_array($vendors->vendor_name, $vendor_name)) array_push($vendor_name, $vendors->vendor_name) ?>
-                    <option <?= $_GET && $_GET['vendor_name'] == $vendors->vendor_name ? "selected" : "" ?> value="{{ $vendors->vendor_name }}">{{ $vendors->vendor_name }}</option>
+                    <option <?= isset($_GET['vendor_name']) && $_GET['vendor_name'] == $vendors->vendor_name ? "selected" : "" ?> value="{{ $vendors->vendor_name }}">{{ $vendors->vendor_name }}</option>
 
                     @endif
                 @endforeach 
@@ -48,7 +48,7 @@
                 @foreach ($po as $vendors)
                     @if($vendors->status != "Deleted" && !in_array($vendors->produk, $produk))
                     <?php if(!in_array($vendors->produk, $produk)) array_push($produk, $vendors->produk) ?>
-                    <option <?= $_GET && $_GET['produk'] == $vendors->produk ? "selected" : "" ?> value="{{ $vendors->produk }}">{{ $vendors->produk }}</option>
+                    <option <?= isset($_GET['produk']) && $_GET['produk'] == $vendors->produk ? "selected" : "" ?> value="{{ $vendors->produk }}">{{ $vendors->produk }}</option>
 
                     @endif
                 @endforeach 
@@ -59,7 +59,7 @@
                 @foreach ($po as $vendors)
                     @if($vendors->status != "Deleted" && !in_array($vendors->status, $status))
                     <?php if(!in_array($vendors->status, $status)) array_push($status, $vendors->status) ?>
-                    <option <?= $_GET && $_GET['status'] == $vendors->status ? "selected" : "" ?> value="{{ $vendors->status }}">{{ $vendors->status }}</option>
+                    <option <?= isset($_GET['status']) && $_GET['status'] == $vendors->status ? "selected" : "" ?> value="{{ $vendors->status }}">{{ $vendors->status }}</option>
 
                     @endif
                 @endforeach 
@@ -80,10 +80,10 @@
             @forelse ($po as $vendors)
 
             <?php 
-                $id_po = ($_GET && $_GET['id_po'] != "") ? ($_GET && $_GET['id_po'] == $vendors->id_po ? true : false) : true;
-                $vendor_name = ($_GET && $_GET['vendor_name'] != "") ? ($_GET && $_GET['vendor_name'] == $vendors->vendor_name ? true : false) : true;
-                $produk = ($_GET && $_GET['produk'] != "") ? ($_GET && $_GET['produk'] == $vendors->produk ? true : false) : true;
-                $status = ($_GET && $_GET['status'] != "") ? ($_GET && $_GET['status'] == $vendors->status ? true : false) : true;
+                $id_po = (isset($_GET['id_po']) && $_GET['id_po'] != "") ? (isset($_GET['id_po']) && $_GET['id_po'] == $vendors->id_po ? true : false) : true;
+                $vendor_name = (isset($_GET['vendor_name']) && $_GET['vendor_name'] != "") ? (isset($_GET['vendor_name']) && $_GET['vendor_name'] == $vendors->vendor_name ? true : false) : true;
+                $produk = (isset($_GET['produk']) && $_GET['produk'] != "") ? (isset($_GET['produk']) && $_GET['produk'] == $vendors->produk ? true : false) : true;
+                $status = (isset($_GET['status']) && $_GET['status'] != "") ? (isset($_GET['status']) && $_GET['status'] == $vendors->status ? true : false) : true;
             ?>
                   
             @if($vendors->status != "Deleted" && $id_po && $vendor_name && $produk && $status)

@@ -32,7 +32,7 @@
                 @foreach ($users as $vendors)
                     @if(!in_array($vendors->name, $name))
                     <?php if(!in_array($vendors->name, $name)) array_push($name, $vendors->name) ?>
-                    <option <?= $_GET && $_GET['name'] == $vendors->name ? "selected" : "" ?> value="{{ $vendors->name }}">{{ $vendors->name }}</option>
+                    <option <?= isset($_GET['name'])&&$_GET && $_GET['name'] == $vendors->name ? "selected" : "" ?> value="{{ $vendors->name }}">{{ $vendors->name }}</option>
 
                     @endif
                 @endforeach 
@@ -52,7 +52,7 @@
             @forelse ($users as $vendors)    
 
             <?php 
-                $name = ($_GET && $_GET['name'] != "") ? ($_GET && $_GET['name'] == $vendors->name ? true : false) : true;
+                $name = (isset($_GET['name']) && $_GET['name'] != "") ? (isset($_GET['name']) && $_GET['name'] == $vendors->name ? true : false) : true;
             ?>
 
             @if($name)
