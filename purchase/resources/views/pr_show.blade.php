@@ -41,7 +41,7 @@
                 </div>
                 <div class="col-md-4">
                     <a href="{{URL::to('/invoice_PRS', $pur_req->id_purchase)}}" class="btn btn-success">Print</a>
-                    <a href="{{URL::to('/send_email/'.$pur_req->id_purchase)}}" class="btn btn-success">Sent Email</a>
+                    <!-- <a href="{{URL::to('/send_email/'.$pur_req->id_purchase)}}" class="btn btn-success">Sent Email</a> -->
                 </div>
             </div><br>
             <div class="form-group">
