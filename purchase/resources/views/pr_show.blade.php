@@ -1,22 +1,22 @@
 @extends('templateWithOutSearch')
- 
+
 @section('title_PurReq', 'active')
- 
+
 @section('sidebar')
     @parent
 @endsection
- 
+
 @section('title_')
 <h5 id="form">Purchase Request</h5><br>
 @endsection
 
-@section('content')    
+@section('content')
     <div class="shadow p-3 mb-5 bg-white rounded">
         <form method="post" action="{{route('PurchaseRequest.store')}}" id="dynamic_form">
         @csrf
         @method('PUT')
         <a href="#" onclick="history.back()" class="btn btn-success">Back</a>
-        @if($pur_req->status == "Canceled")                
+        @if($pur_req->status == "Canceled")
         <a href="{{route('PurchaseRequest.edit', $pur_req->id_purchase)}}" hidden class="btn btn-success">Edit</a>
         @elseif($pur_req->status == "In Process")
         <a href="{{URL::to('StoreRFQ', $pur_req->id_purchase)}}" class="btn btn-success">Create RFQ</a><br><br>
@@ -30,12 +30,12 @@
             <p>{{ $message }}</p>
         </div>
         @endif
-        
+
         <div class="container col-md-9">
             <div class="row">
-                <div class="col-md-5">                    
+                <div class="col-md-5">
                     <h2>{{$pur_req->id_purchase}}</h2>
-                </div>         
+                </div>
                 <div class="col-md-3">
                     <p>Status: {{$pur_req->status}}</p>
                 </div>
@@ -81,13 +81,13 @@
                     <th>Description</th>
                     <th>Unit of Measure</th>
                     <th>Quantity</th>
-                </tr>                    
+                </tr>
             </thead>
             <tbody>
-                @forelse($pur_prod as $vendorss) 
+                @forelse($pur_prod as $vendorss)
                     <tr>
                         <td><select readonly name="product_code" id="product_code" class="form-control">
-                        
+
                             @foreach ($produk as $produks)
                                 <option value="{{$produks->id_produk}}"
                                 @if($vendorss->id_produk==$produks->id_produk) selected @endif >
@@ -108,4 +108,11 @@
     </form>
     <p>This data was created by {{$users->name}} on {{$users->created_at}}</p>
 </div>
+@endsection
+@section('script')
+<script>
+$(document).ready(function(){
+    $('#vendor').val({{ $pur_req->vendor_id }});
+})
+</script>
 @endsection

@@ -1,7 +1,7 @@
 @extends('templateWithOutSearch')
- 
+
 @section('title_PurReq', 'active')
- 
+
 @section('sidebar')
     @parent
 @endsection
@@ -9,7 +9,7 @@
 @section('title_')
 <h5 id="form">Purchase Request</h5><br>
 @endsection
- 
+
 @section('content')
     <div class="shadow p-3 mb-5 bg-white rounded">
         <form method="post" action="{{route('PurchaseRequest.store')}}" id="dynamic_form">
@@ -19,7 +19,7 @@
             <a href="#" onclick="history.back()" class="btn btn-success">Back</a>
             <button type="submit" class="btn btn-success">Save</button>
             <button type="reset" class="btn btn-success">Discard</button><br><br>
-            
+
             <div class="container col-md-9">
                 <div class="form-group">
                     <div class="row">
@@ -59,7 +59,7 @@
                         <th>Description</th>
                         <th>Unit of Measure</th>
                         <th>Quantity</th>
-                    </tr>                    
+                    </tr>
                 </thead>
                 <tbody>
                     <tr>
@@ -78,8 +78,8 @@
         function dynamic_field(number)
         {
             html = '<tr>';
-            html += '<td><select name="product_code[]" id="product_code[]" class="form-control" required>'+
-            '@foreach ($produk as $produks)<option data-id_vendor="{{$produks->id_vendor}}" value="{{$produks->id_produk}}">{{$produks->nama_produk}}</option>@endforeach</select></td>';            
+            html += '<td><select name="product_code[]" id="product_code[]" class="form-control product-select" required><option>Pilih Produk</option>'+
+            '@foreach ($produk as $produks)<option data-id_vendor="{{$produks->id_vendor}}" value="{{$produks->id_produk}}">{{$produks->nama_produk}}</option>@endforeach</select></td>';
             html += '<td><input type="text" name="description[]" class="form-control" required /></td>';
             html += '<td><input type="text" name="unit[]" class="form-control" required /></td>';
             html += '<td><input type="number" name="qty[]" class="form-control" required min="1" /></td>';
@@ -87,34 +87,42 @@
             {
                 html += '<td><button type="button" name="remove" id="" class="btn btn-danger remove">Remove</button></td></tr>';
                 $('tbody').append(html);
-                // alert(number);
             }
             else
-            {   
+            {
                 html += '<td><button type="button" name="add" id="add" class="btn btn-success">+ Add an item</button></td></tr>';
                 $('tbody').html(html);
+                reset();
             }
+        }
+
+        function reset(){
+            $(".product-select").prop('selectedIndex', -1);
+        }
+
+        function setList(){
+            $(`select[name="product_code[]"] option`).addClass("d-none")
+            $(`select[name="product_code[]"] option[data-id_vendor="${$(`select[name="vendor_id"]`).val()}"]`).removeClass("d-none")
         }
 
         $(document).on('click', '#add', function(){
             count++;
             dynamic_field(count);
+            setList();
         });
 
         $(document).on('click', '.remove', function(){
             count--;
             $(this).closest("tr").remove();
         });
+
+        $('select[name=vendor_id]').on('change', function() {
+            reset();
+            setList();
+        });
+
+        reset();
+        setList();
     });
 </script>
-    <script>
-        console.log($(`select[name="product_code[]"] option[data-id_vendor="${$(`select[name="vendor_id"]`).val()}"]`))
-        $(`select[name="product_code[]"] option`).addClass("d-none")
-        $(`select[name="product_code[]"] option[data-id_vendor="${$(`select[name="vendor_id"]`).val()}"]`).removeClass("d-none")
-
-        $(`select[name="vendor_id"]`).on("change",function(){
-            $(`select[name="product_code[]"] option`).addClass("d-none")
-            $(`select[name="product_code[]"] option[data-id_vendor="${$(this).val()}"]`).removeClass("d-none")
-        })
-    </script>
 @endsection

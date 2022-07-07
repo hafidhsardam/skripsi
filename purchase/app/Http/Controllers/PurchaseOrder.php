@@ -45,10 +45,10 @@ class PurchaseOrder extends Controller
         $new_id =  PO_Controller::get_idmax()->all();
         if ($new_id > 0) {
             foreach ($new_id as $key) {
-                $auto_id = $key->id_po;              
+                $auto_id = $key->id_po;
             }
-        }          
-        return $id_po = PO_Controller::get_newid($auto_id,'PO'); 
+        }
+        return $id_po = PO_Controller::get_newid($auto_id,'PO');
     }
 
     /**
@@ -81,9 +81,9 @@ class PurchaseOrder extends Controller
         $po = PO_Controller::find($id);
         $po->status = 'Received';
         if(!empty($request->file('dokumen'))) {
-            $file = $request->file('dokumen');            
+            $file = $request->file('dokumen');
             $po->document = $file->getClientOriginalName();
-            $tujuan_upload = 'dokumen';
+            $tujuan_upload = 'dokumen/'.$id;
             $file->move($tujuan_upload, $file->getClientOriginalName());
         }
         $po->save();
@@ -107,7 +107,7 @@ class PurchaseOrder extends Controller
         $po = DB::table('purchase_orders')
             ->join('purchase_reqs','purchase_orders.id_purchase', '=', 'purchase_reqs.id_purchase')
             ->join('vendors','vendors.id_vendor', '=', 'purchase_reqs.vendor_id')
-            ->select('id_po','vendor_id', 'purchase_orders.id_purchase', 'purchase_orders.created_at', 'notes', 'purchase_orders.status', 'purchase_reqs.order_date')
+            ->select('id_po','vendor_id', 'purchase_orders.id_purchase', 'purchase_orders.created_at', 'notes', 'purchase_orders.status', 'purchase_reqs.order_date', 'document')
             ->where('id_po', $id)->first();
 
         $users = DB::table('log_history')->join('users','users.id_user','=','log_history.id_user')
@@ -125,7 +125,7 @@ class PurchaseOrder extends Controller
 
         return view('po_show', compact('po','pos','vendor','produk', 'users'));
     }
-    
+
     public function cancel($id)
     {
         $po = PO_Controller::find($id);
@@ -206,7 +206,7 @@ class PurchaseOrder extends Controller
             'status'  => 'Deleted',
             'updated_at'  => date("Y-m-d H:i:s"),
         ));
-        
+
         DB::table('purchase_orders')
         ->where('id_po', $id)
         ->update(array(
@@ -225,6 +225,6 @@ class PurchaseOrder extends Controller
      */
     public function destroy($id)
     {
-        
+
     }
 }

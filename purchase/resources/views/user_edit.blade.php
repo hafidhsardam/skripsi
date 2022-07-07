@@ -1,7 +1,7 @@
 @extends('templateWithOutSearch')
- 
+
 @section('title_Users', 'active')
- 
+
 @section('sidebar')
     @parent
 @endsection
@@ -21,7 +21,7 @@
         <button type="submit" class="btn btn-success">
                     {{ __('Update') }}
                 </button>
-                
+
         <a href="{{URL::to('delete_user', $users->id_user)}}" class="btn btn-success">Delete</a>
         <div class="row mb-3">
             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
@@ -52,24 +52,10 @@
         </div>
 
         <div class="row mb-3">
-            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Old Password') }}</label>
-
-            <div class="col-md-6">
-                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="old_password" required autocomplete="new-password">
-
-                @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-        </div>
-
-        <div class="row mb-3">
             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
             <div class="col-md-6">
-                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="new_password" required autocomplete="new-password">
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
 
                 @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -83,7 +69,7 @@
             <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
 
             <div class="col-md-6">
-                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
             </div>
         </div>
 
@@ -97,5 +83,16 @@
         </div>
     </form>
 </div>
+@endsection
+@section('script')
+<script>
+    $(`input[name="password"]`).on("change",function(){
+        if($(this).val() != ""){
+            $(`input[name="password_confirmation"]`).attr("required",true);
+        }else{
+            $(`input[name="password_confirmation"]`).attr("required",false);
+        }
+    })
+</script>
 @endsection
 @endif

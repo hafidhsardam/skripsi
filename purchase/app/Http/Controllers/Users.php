@@ -47,7 +47,7 @@ class Users extends Controller
             'level' => 'user'
         ]);
         return redirect()->route('Users.index')
-        ->with('success','New user has been created successfully.');
+            ->with('success', 'New user has been created successfully.');
     }
 
     /**
@@ -82,46 +82,22 @@ class Users extends Controller
      */
     public function update(Request $request, $id)
     {
-        $hashedPassword = Auth::user()->password;
- 
-        if (Hash::check($request->old_password, $hashedPassword )) {
- 
-            if (!Hash::check($request->new_password, $hashedPassword)) {
- 
-                $users = User::find(Auth::user()->id_user);
-                $users->password = bcrypt($request->new_password);
-                User::where( 'id_user' , Auth::user()->id_user)->update( array( 'password' =>  $users->password));
-    
-                return redirect()->route('Users.index')
-                ->with('success','Password changed');
-            }
- 
-            else{
-                return redirect()->route('Users.index')
-                ->with('error','Password can\'t change');
-            }
- 
-           }
- 
-        else{
-            return redirect()->route('Users.index')
-            ->with('error','Password didn\'t match');
-        }
 
-        $user = auth()->user();
-        if (Hash::check($request->password, $user->password)) { 
-            $data = array(
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password),
-            );
-            $users = User::find($id);
-            $users->update($data);
-         
-         } else {
-            return redirect()->route('Users.index')
-            ->with('error','Password didn\'t match');
-         }
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,' . $id.',id_user',
+            'password' => 'nullable|confirmed'
+        ]);
+
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        if (!empty($request->password)) {
+            $user->password = Hash::make($request->password);
+        }
+        $user->save();
+
+        return redirect()->route('Users.index')->with('success', 'Users updated');
     }
 
     public function delete($id)
@@ -129,14 +105,14 @@ class Users extends Controller
         $users = User::find($id);
         $users->delete();
         return redirect()->route('Users.index')
-            ->with('error','User deleted succesfully');
+            ->with('error', 'User deleted succesfully');
     }
 
     public function sentemail($email)
     {
         Mail::to($email)->send(new SentEmail());
- 
-		return redirect()->back();
+
+        return redirect()->back();
     }
 
     /**

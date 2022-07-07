@@ -37,11 +37,11 @@ class RequestQuotation extends Controller
         $new_id =  RequestQuotation_model::get_idmax()->all();
         if ($new_id > 0) {
             foreach ($new_id as $key) {
-                $auto_id = $key->id_quotation;              
+                $auto_id = $key->id_quotation;
             }
-        }  
-        
-        return $id_purchase = RequestQuotation_model::get_newid($auto_id,'RFQ'); 
+        }
+
+        return $id_purchase = RequestQuotation_model::get_newid($auto_id,'RFQ');
     }
 
     public function StoreRFQ($id)
@@ -121,6 +121,15 @@ class RequestQuotation extends Controller
     {
         $qr = RequestQuotation_model::find($id);
         $qr->status = 'Approved';
+        $qr->save();
+        return redirect()->route('RequestQuotations.index')
+        ->with('success','Request Quotation has been updated successfully.');
+    }
+
+    public function reject($id)
+    {
+        $qr = RequestQuotation_model::find($id);
+        $qr->status = 'Rejected';
         $qr->save();
         return redirect()->route('RequestQuotations.index')
         ->with('success','Request Quotation has been updated successfully.');

@@ -1,11 +1,11 @@
 @extends('templateWithOutSearch')
- 
+
 @section('title_PO', 'active')
- 
+
 @section('sidebar')
     @parent
 @endsection
- 
+
 @section('title_')
 <h5 id="form">Purchase Order </h5><br>
 @endsection
@@ -14,31 +14,34 @@
     <div class="shadow p-3 mb-5 bg-white rounded">
         <form method="post" action="{{URL::to('received', $po->id_po)}}" id="dynamic_form" enctype="multipart/form-data">
         @csrf
-        <!-- @method('PUT') -->        
+        <!-- @method('PUT') -->
         <a href="#" onclick="history.back()" class="btn btn-success">Back</a>
+        @if (Auth::user()->level == 'admin')
         @if($po->status=='Waiting Approval')
-        <a href="{{URL::to('cancel', $po->id_po)}}" class="btn btn-success">Cancel PO</a> 
-        <a href="{{URL::to('approved', $po->id_po)}}" class="btn btn-success">Approved</a> 
+        <a href="{{URL::to('cancel', $po->id_po)}}" class="btn btn-success">Cancel PO</a>
+        <a href="{{URL::to('approved', $po->id_po)}}" class="btn btn-success">Approved</a>
         @elseif($po->status=='Canceled')
         @method('DELETE')
         <a href="{{URL::to('/delete', $po->id_po)}}" class="btn btn-success">Delete</a>
         @elseif($po->status=='Received' || $po->status=='Deleted')
-        
+
         @else
         <button type="submit" class="btn btn-success">Received</button>
-        @endif<br><br>
+        @endif
+        @endif
+        <br><br>
 
         @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
         </div>
         @endif
-        
+
         <div class="container col-md-9">
             <div class="row">
-                <div class="col-md-4">                    
+                <div class="col-md-4">
                     <h2>{{$po->id_po}}</h2>
-                </div>         
+                </div>
                 <div class="col-md-4">
                     <p>Status: {{$po->status}}</p>
                 </div>
@@ -75,7 +78,7 @@
 
                             <textarea readonly value = "true" class="form-control"type="text" name="notes" id="notes" cols="5" rows="5"> {{$po->notes}}</textarea>
 
-                           
+
                         </div>
                         <div class="col-md-6">
                             <label for="order_date">Order Date</label>
@@ -83,6 +86,7 @@
                         </div>
                     </div>
                 </div>
+                @if($po->status=='Approved' || $po->status=='Received')
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-6">
@@ -90,20 +94,26 @@
                                 <div class="col-md-3">
                                     <label for="dok">Document</label>
                                 </div>
-                                <div class="col-md-9">                                    
+                                <div class="col-md-9">
                                     <input class="form-control" type="file" name="dokumen" id="dokumen" style="outline: none; border:none;">
+                                    @if ($po->status=='Received')
+                                    <div class="mt-3">
+                                        <span>{{ $po->document }} <a href="{{ asset('dokumen/'.$po->id_po.'/'.$po->document) }}">Download</a></span>
+                                    </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                @endif
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-6">
                             <label for="notes">Source Document</label>
-                            <input readonly value = "{{$po->id_purchase}}" class="form-control"type="text" name="notes" id="notes" >  
+                            <input readonly value = "{{$po->id_purchase}}" class="form-control"type="text" name="notes" id="notes" >
                         </div>
-                       
+
                     </div>
                 </div>
             </div><br><br>
@@ -116,13 +126,13 @@
                         <th>Quantity</th>
                         <th>Unit Price</th>
                         <th>Subtotal</th>
-                    </tr>                    
+                    </tr>
                 </thead>
                 <tbody>
                     <?php $total = 0; ?>
-                    @forelse($pos as $vendorss) 
+                    @forelse($pos as $vendorss)
                     <tr>
-                        <td><select readonly name="product_code" id="product_code" class="form-control">                        
+                        <td><select readonly name="product_code" id="product_code" class="form-control">
                             @foreach ($produk as $produks)
                                 <option data-id_vendor="{{$produks->id_vendor}}" value="{{$produks->id_produk}}"
                                 @if($vendorss->id_produk==$produks->id_produk) selected @endif >

@@ -1,7 +1,7 @@
 @extends('templateWithOutSearch')
- 
+
 @section('title_RFQ', 'active')
- 
+
 @section('sidebar')
     @parent
 @endsection
@@ -10,7 +10,7 @@
 <h5 id="form">Request for Quotation</h5><br>
 @endsection
 
-@section('content')    
+@section('content')
 <div class="shadow p-3 mb-5 bg-white rounded">
         <form method="post" action="{{route('PurchaseOrder.store')}}" id="dynamic_form">
             <input type="text" hidden name="id_purchase" id="id_purchase" value="{{$qr->id_purchase}}">
@@ -21,6 +21,7 @@
         <button type="submit" class="btn btn-success">Create PO</button><br><br>
         @elseif(Auth::user()->level == 'admin'&&$qr->status == 'Waiting Approval')
         <a href="{{route('RequestQuotations.edit', $qr->id_quotation)}}" class="btn btn-success">Approved</a>
+        <a href="{{route('RequestQuotations.reject', $qr->id_quotation)}}" class="btn btn-success">Rejected</a>
         @endif
 
         @if ($message = Session::get('success'))
@@ -28,12 +29,12 @@
             <p>{{ $message }}</p>
         </div>
         @endif
-        
+
         <div class="container col-md-9"><br>
             <div class="row">
-                <div class="col-md-4">                    
+                <div class="col-md-4">
                     <h2>{{$qr->id_quotation}}</h2>
-                </div>         
+                </div>
                 <div class="col-md-4">
                     <p>Status: {{$qr->status}}</p>
                 </div>
@@ -77,9 +78,9 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label for="notes">Source Document</label>
-                        <input readonly value = "{{$qr->id_purchase}}" class="form-control"type="text" name="notes" id="notes" >  
+                        <input readonly value = "{{$qr->id_purchase}}" class="form-control"type="text" name="notes" id="notes" >
                     </div>
-                   
+
                 </div>
             </div>
         </div><br><br>
@@ -92,14 +93,14 @@
                     <th>Quantity</th>
                     <th>Unit Price</th>
                     <th>Subtotal</th>
-                </tr>                    
+                </tr>
             </thead>
             <tbody>
             <?php $total = 0; ?>
-                @forelse($apalah as $vendorss) 
+                @forelse($apalah as $vendorss)
                     <tr>
                         <td><select readonly name="product_code" id="product_code" class="form-control">
-                        
+
                             @foreach ($produk as $produks)
                                 <option value="{{$produks->id_produk}}"
                                 @if($vendorss->id_produk==$produks->id_produk) selected @endif >

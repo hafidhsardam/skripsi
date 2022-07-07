@@ -1,4 +1,4 @@
-@extends('templateWithOutSearch')
+@extends('template')
  
 @section('title_Product', 'active')
  

@@ -44,6 +44,8 @@ Route::get('StoreRFQ/{id}', [RequestQuotation::class, 'StoreRFQ']);
 
 Route::resource('RequestQuotations', RequestQuotation::class);
 
+Route::get('RequestQuotations/{id}/reject', [RequestQuotation::class, 'reject'])->name('RequestQuotations.reject');
+
 Route::resource('PurchaseOrder', PurchaseOrder::class);
 
 Route::get('/cancel/{id}', [PurchaseOrder::class, 'cancel']);
