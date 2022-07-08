@@ -20,6 +20,7 @@
         @if($qr->status == 'Approved')
         <button type="submit" class="btn btn-success">Create PO</button><br><br>
         @elseif(Auth::user()->level == 'admin'&&$qr->status == 'Waiting Approval')
+        
         <a href="{{route('RequestQuotations.edit', $qr->id_quotation)}}" class="btn btn-success">Approved</a>
         <a href="{{route('RequestQuotations.reject', $qr->id_quotation)}}" class="btn btn-success">Rejected</a>
         @endif
@@ -38,10 +39,12 @@
                 <div class="col-md-4">
                     <p>Status: {{$qr->status}}</p>
                 </div>
+                @if($qr->status == 'Approved')
                 <div class="col-md-4">
                     <a href="{{URL::to('/rfq_invoice', $qr->id_quotation)}}" class="btn btn-success">Print</a>
                     <a href="{{URL::to('/send_email/'.$qr->id_purchase)}}" class="btn btn-success">Sent Email</a>
                 </div>
+                @endif
             </div><br>
             <div class="form-group">
                 <div class="row">
