@@ -22,7 +22,7 @@
         <form action="" method="get" class="row mb-4 ml-1">
             <?php $id_po = [] ?>
             <select name="id_po" class="form-control col-sm-3 mr-2">
-                <option value="">Filter PO</option>
+                <option value="">Filter Purchase Order</option>
                 @foreach ($po as $vendors)
                     @if($vendors->status != "Deleted" && !in_array($vendors->id_po, $id_po))
                     <?php if(!in_array($vendors->id_po, $id_po)) array_push($id_po, $vendors->id_po) ?>
