@@ -50,8 +50,8 @@
         <div id="accordian" class="col-md-2">
             <ul class="show-dropdown main-navbar text-left">
                 <div class="selector-active"><div class="top"></div><div class="bottom"></div></div>
-                
-                <h2 style="color: white; font-weight:550;margin: 20px;">PURCHASE</h2><br><br>                    
+
+                <h2 style="color: white; font-weight:550;margin: 20px;">PURCHASE</h2><br><br>
                 <li class="@yield('title_Dashboard')">
                     <a class="accr" href="{{ url('Dashboard') }}"><i class="fa fa-tachometer"></i>Dashboard</a>
                 </li>
@@ -79,7 +79,7 @@
                 </li>
                 @endif
                 <br><br>
-                
+
                 <li>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                         @csrf
@@ -87,14 +87,14 @@
                     </form>
                     <p class="rights" style="color: white;">&copy 2022 Purchase ERP</p>
                 </li>
-                
+
             </ul>
         </div>
         <div class="col-md-2"></div>
         <div class="container col-md-8">
             <div class="row">
                 <div class="col-md-4"><br>
-                    @yield('title_') 
+                    @yield('title_')
                 </div>
                 <div class="col-md-8"><br>
                     <div class="row">
@@ -118,17 +118,17 @@
                                 <div class="col-md-1">
                                     <p>{{Auth::user()->name}}</p>
                                 </div>
-                            </div>                            
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>            
-            @yield('content')            
+            </div>
+            @yield('content')
             <div class="container-fluid">
-                <div class="row cari">                    
+                <div class="row cari">
                 </div>
             </div>
-        </div>        
+        </div>
     </div>
     @show
     @section('javascr')
@@ -154,7 +154,7 @@
         var itemPosVerticalTop = activeItemVerticalInner.position();
         var itemPosVerticalLeft = activeItemVerticalInner.position();
         $(".selector-active").css({
-            "top":itemPosVerticalTop.top + "px", 
+            "top":itemPosVerticalTop.top + "px",
             "left":itemPosVerticalLeft.left + "px",
             "height": activeWidthVerticalHeight + "px",
             "width": activeWidthVerticalWidth + "px"
@@ -167,7 +167,7 @@
             var itemPosVerticalTop = $(this).position();
             var itemPosVerticalLeft = $(this).position();
             $(".selector-active").css({
-                "top":itemPosVerticalTop.top + "px", 
+                "top":itemPosVerticalTop.top + "px",
                 "left":itemPosVerticalLeft.left + "px",
                 "height": activeWidthVerticalHeight + "px",
                 "width": activeWidthVerticalWidth + "px"
@@ -175,5 +175,6 @@
         });
     </script>
     @show
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 </body>
 </html>
