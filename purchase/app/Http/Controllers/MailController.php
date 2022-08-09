@@ -27,8 +27,8 @@ class MailController extends Controller {
 
       Mail::send('mail', $data, function($message) {
          $message->to($this->vendor->email)->subject
-            ('Purchase Order Information');
-         $message->from($this->vendor->email,'Purchase Order');
+            ('Order Information');
+         $message->from($this->vendor->email,'Order');
       });
 
       return redirect()->back()->with('success', 'Success send email');
