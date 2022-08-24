@@ -173,7 +173,7 @@ class PurchaseOrder extends Controller
         $log->save();
 
         return redirect()->route('PurchaseOrder.index')
-        ->with('success','Purchase order has been canceled successfully.');
+        ->with('success','Purchase order has been approved successfully.');
     }
     /**
      * Show the form for editing the specified resource.
