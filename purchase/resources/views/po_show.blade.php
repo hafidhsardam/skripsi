@@ -16,18 +16,26 @@
         @csrf
         <!-- @method('PUT') -->
         <a href="#" onclick="history.back()" class="btn btn-success">Back</a>
+        
         @if (Auth::user()->level == 'admin')
-        @if($po->status=='Waiting Approval')
-        <a href="{{URL::to('cancel', $po->id_po)}}" class="btn btn-success">Cancel PO</a>
-        <a href="{{URL::to('approved', $po->id_po)}}" class="btn btn-success">Approved</a>
+            @if($po->status=='Waiting Approval')
+            <a href="{{URL::to('cancel', $po->id_po)}}" class="btn btn-success">Cancel PO</a>
+            <a href="{{URL::to('approved', $po->id_po)}}" class="btn btn-success">Approved</a>
         @elseif($po->status=='Canceled')
-        @method('DELETE')
-        <a href="{{URL::to('/delete', $po->id_po)}}" class="btn btn-success">Delete</a>
-        @elseif($po->status=='Received' || $po->status=='Deleted')
+            @method('DELETE')
+            <a href="{{URL::to('/delete', $po->id_po)}}" class="btn btn-success">Delete</a>
+            @elseif($po->status=='Received' || $po->status=='Deleted')
 
-        @else
-        <button type="submit" class="btn btn-success">Received</button>
+
+            @elseif($po->status=='Approved')
+            <button type="submit" class="btn btn-success">Received</button>
+            @endif
         @endif
+
+        @if (Auth::user()->level == 'user')
+          @if($po->status=='Approved')
+             <button type="submit" class="btn btn-success">Received</button>
+          @endif
         @endif
         <br><br>
 
